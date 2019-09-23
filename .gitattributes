@@ -1,1 +1,4 @@
 *.framework filter=lfs diff=lfs merge=lfs -text
+CodeScan/AccuraScan/FrameWork/LibXL.framework/Versions/A/LibXL filter=lfs diff=lfs merge=lfs -text
+CodeScan/AccuraScan/opencv2.framework/Versions/A/opencv2 filter=lfs diff=lfs merge=lfs -text
+ZoomAuthenticationHybrid.framework/ZoomAuthenticationHybrid filter=lfs diff=lfs merge=lfs -text
