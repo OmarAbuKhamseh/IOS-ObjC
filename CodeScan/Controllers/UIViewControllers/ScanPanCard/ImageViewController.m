@@ -80,7 +80,8 @@ UIImage* imgwithCroped;
 -(void)ChangedOrintation {
     if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationLandscapeLeft)  )
     {
-        //do something or rather
+        //do something or rather]
+        _imageViewLogo.hidden = YES;
         [self
          shouldAutorotateToInterfaceOrientation:UIInterfaceOrientationLandscapeLeft];
         NSLog(@"landscape left");
@@ -95,6 +96,7 @@ UIImage* imgwithCroped;
     }
     if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationLandscapeRight)  )
     {        //do something or rather
+        _imageViewLogo.hidden = YES;
         [self
          shouldAutorotateToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
         NSLog(@"landscape right");
@@ -110,6 +112,7 @@ UIImage* imgwithCroped;
     }
     if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationPortrait)  )
     {
+        _imageViewLogo.hidden = NO;
         //do something or rather
         [self shouldAutorotateToInterfaceOrientation:UIInterfaceOrientationPortrait];
         NSLog(@"portrait");

@@ -24,6 +24,7 @@
 - (IBAction)usePhotoAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnUse;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgWidth;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLogo;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgHeight;
 

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		030A72BA21EA09290058B664 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 030A72B921EA09270058B664 /* me.png */; };
-		034DF42921E32D7C0090A360 /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 030CCEF321DF9BBB00B20A52 /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		034DF42B21E32DE50090A360 /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030CCEF321DF9BBB00B20A52 /* ZoomAuthenticationHybrid.framework */; };
 		034DF42D21E346530090A360 /* ZoomHybrid.pub in Resources */ = {isa = PBXBuildFile; fileRef = 034DF42C21E346530090A360 /* ZoomHybrid.pub */; };
 		03F05944224A053A00A63B3C /* cam.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F05943224A053700A63B3C /* cam.png */; };
 		08CBD74B23003811005A0C9C /* PostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CBD74A23003811005A0C9C /* PostResult.swift */; };
@@ -35,7 +33,6 @@
 		5C67D99C2111E45600154EB7 /* key.license in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99B2111E45600154EB7 /* key.license */; };
 		5C67D99F2111E46400154EB7 /* mMQDF_f_Passport_bottom.dic in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99D2111E46300154EB7 /* mMQDF_f_Passport_bottom.dic */; };
 		5C67D9A02111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99E2111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic */; };
-		5C67D9A22111E47900154EB7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C67D9A12111E47800154EB7 /* opencv2.framework */; };
 		5C67D9A72111E48C00154EB7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D9A42111E48B00154EB7 /* SVProgressHUD.bundle */; };
 		5C67D9A82111E48C00154EB7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9A62111E48B00154EB7 /* SVProgressHUD.m */; };
 		5C67D9B22111E4D200154EB7 /* WebAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9B02111E4D200154EB7 /* WebAPIRequest.m */; };
@@ -56,7 +53,6 @@
 		5C94E028211ACA8200428686 /* Aller_Std_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C94E021211ACA8200428686 /* Aller_Std_LtIt.ttf */; };
 		5C94E029211ACA8200428686 /* Aller_Std_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C94E022211ACA8200428686 /* Aller_Std_Rg.ttf */; };
 		5C94E02A211ACA8200428686 /* AllerDisplay_Std_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C94E023211ACA8200428686 /* AllerDisplay_Std_Rg.ttf */; };
-		5C9AF4C7211995B400700EDF /* LibXL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9AF4C6211995B300700EDF /* LibXL.framework */; };
 		5C9AF4F42119995800700EDF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9AF4F32119995800700EDF /* libsqlite3.dylib */; };
 		5C9AF4F62119996D00700EDF /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9AF4F52119996D00700EDF /* libz.1.dylib */; };
 		5C9AF4F82119997700700EDF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9AF4F72119997700700EDF /* SystemConfiguration.framework */; };
@@ -119,9 +115,13 @@
 		84D9F2CE214638DE005DE88E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2C8214638DE005DE88E /* TPKeyboardAvoidingScrollView.m */; };
 		84D9F2CF214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2CA214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m */; };
 		A30854CB23083FA8007B23E8 /* accuraface.license in Resources */ = {isa = PBXBuildFile; fileRef = A30854CA23083FA8007B23E8 /* accuraface.license */; };
+		A34DB3A9233A2A4F00A7191C /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34DB3A8233A2A4F00A7191C /* opencv2.framework */; };
+		A39C03E2233A2DF5006D640B /* LibXL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E1233A2DF5006D640B /* LibXL.framework */; };
+		A39C03E6233A2E6D006D640B /* AccuraFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E4233A2E6D006D640B /* AccuraFace.a */; };
+		A39C03E7233A2E6D006D640B /* AccuraOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E5233A2E6D006D640B /* AccuraOCR.a */; };
+		A39C03EA233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */; };
+		A39C03EB233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE1CCF92231FBDA2003F0B50 /* CustomAFNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1CCF90231FBDA0003F0B50 /* CustomAFNetWorking.m */; };
-		AE2688F82322727200C14E2E /* AccuraOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2688F62322726C00C14E2E /* AccuraOCR.a */; };
-		AE2688F92322727200C14E2E /* AccuraFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2688F72322727200C14E2E /* AccuraFace.a */; };
 		AE498FA8231A575800D04C00 /* DocumentTableCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE498FA6231A575800D04C00 /* DocumentTableCell1.m */; };
 		AE498FA9231A575800D04C00 /* DocumentTableCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE498FA7231A575800D04C00 /* DocumentTableCell1.xib */; };
 		AE498FAD231A576F00D04C00 /* ResultTableCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE498FAB231A576F00D04C00 /* ResultTableCell1.m */; };
@@ -136,13 +136,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		034DF42A21E32D7C0090A360 /* Embed Frameworks */ = {
+		A39C03EC233A2F06006D640B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				034DF42921E32D7C0090A360 /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
+				A39C03EB233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +151,6 @@
 
 /* Begin PBXFileReference section */
 		030A72B921EA09270058B664 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
-		030CCEF321DF9BBB00B20A52 /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		034DF42C21E346530090A360 /* ZoomHybrid.pub */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZoomHybrid.pub; sourceTree = "<group>"; };
 		03F05943224A053700A63B3C /* cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cam.png; sourceTree = "<group>"; };
 		0540F6CC908839F9619257A0 /* Pods-AccuraSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccuraSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AccuraSDK/Pods-AccuraSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,7 +191,6 @@
 		5C67D99B2111E45600154EB7 /* key.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = key.license; sourceTree = "<group>"; };
 		5C67D99D2111E46300154EB7 /* mMQDF_f_Passport_bottom.dic */ = {isa = PBXFileReference; lastKnownFileType = file; path = mMQDF_f_Passport_bottom.dic; sourceTree = "<group>"; };
 		5C67D99E2111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic */ = {isa = PBXFileReference; lastKnownFileType = file; path = mMQDF_f_Passport_bottom_Gray.dic; sourceTree = "<group>"; };
-		5C67D9A12111E47800154EB7 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5C67D9A42111E48B00154EB7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		5C67D9A52111E48B00154EB7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		5C67D9A62111E48B00154EB7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		5C94E021211ACA8200428686 /* Aller_Std_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Std_LtIt.ttf; sourceTree = "<group>"; };
 		5C94E022211ACA8200428686 /* Aller_Std_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Std_Rg.ttf; sourceTree = "<group>"; };
 		5C94E023211ACA8200428686 /* AllerDisplay_Std_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AllerDisplay_Std_Rg.ttf; sourceTree = "<group>"; };
-		5C9AF4C6211995B300700EDF /* LibXL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LibXL.framework; sourceTree = "<group>"; };
 		5C9AF4F32119995800700EDF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		5C9AF4F52119996D00700EDF /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		5C9AF4F72119997700700EDF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -311,12 +308,16 @@
 		84D9F2CB214638DE005DE88E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		9CECF16C6E84083F97DABCB3 /* Pods_Accura_Scan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Accura_Scan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30854CA23083FA8007B23E8 /* accuraface.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = accuraface.license; sourceTree = "<group>"; };
+		A34DB3A8233A2A4F00A7191C /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		A39C03E1233A2DF5006D640B /* LibXL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LibXL.framework; sourceTree = "<group>"; };
+		A39C03E4233A2E6D006D640B /* AccuraFace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraFace.a; sourceTree = "<group>"; };
+		A39C03E5233A2E6D006D640B /* AccuraOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraOCR.a; sourceTree = "<group>"; };
+		A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		A3BD2BF48CC8B09BF1D1065E /* Pods-Accura Scan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Accura Scan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Accura Scan/Pods-Accura Scan.release.xcconfig"; sourceTree = "<group>"; };
+		A3BD2D5F2339E4D900C10E07 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A681A200B0E9D89F47FBE4CA /* Pods-AccuraSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccuraSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AccuraSDK/Pods-AccuraSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		AE1CCF90231FBDA0003F0B50 /* CustomAFNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAFNetWorking.m; sourceTree = "<group>"; };
 		AE1CCF91231FBDA2003F0B50 /* CustomAFNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAFNetWorking.h; sourceTree = "<group>"; };
-		AE2688F62322726C00C14E2E /* AccuraOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraOCR.a; sourceTree = "<group>"; };
-		AE2688F72322727200C14E2E /* AccuraFace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraFace.a; sourceTree = "<group>"; };
 		AE498FA5231A575800D04C00 /* DocumentTableCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentTableCell1.h; sourceTree = "<group>"; };
 		AE498FA6231A575800D04C00 /* DocumentTableCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentTableCell1.m; sourceTree = "<group>"; };
 		AE498FA7231A575800D04C00 /* DocumentTableCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableCell1.xib; sourceTree = "<group>"; };
@@ -344,27 +345,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FCC8EA230BD23A00A5FB90 /* MobileCoreServices.framework in Frameworks */,
-				AE2688F92322727200C14E2E /* AccuraFace.a in Frameworks */,
-				034DF42B21E32DE50090A360 /* ZoomAuthenticationHybrid.framework in Frameworks */,
+				A39C03EA233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Frameworks */,
 				5CA3B78E2144071200A5867A /* AVFoundation.framework in Frameworks */,
 				5C9AF51021199A1E00700EDF /* Foundation.framework in Frameworks */,
 				5C9AF50E21199A1300700EDF /* UIKit.framework in Frameworks */,
 				5C9AF50C21199A0A00700EDF /* Accelerate.framework in Frameworks */,
 				5C9AF50A211999FE00700EDF /* CoreVideo.framework in Frameworks */,
 				5C9AF508211999F200700EDF /* CoreMedia.framework in Frameworks */,
+				A39C03E2233A2DF5006D640B /* LibXL.framework in Frameworks */,
 				5C9AF506211999E500700EDF /* CoreImage.framework in Frameworks */,
 				5C9AF504211999C600700EDF /* QuartzCore.framework in Frameworks */,
+				A34DB3A9233A2A4F00A7191C /* opencv2.framework in Frameworks */,
 				5C9AF502211999BD00700EDF /* AudioToolbox.framework in Frameworks */,
-				AE2688F82322727200C14E2E /* AccuraOCR.a in Frameworks */,
+				A39C03E6233A2E6D006D640B /* AccuraFace.a in Frameworks */,
 				5C9AF500211999B300700EDF /* libsqlite3.tbd in Frameworks */,
 				5C9AF4FE211999A400700EDF /* AccuraScan.sqlite in Frameworks */,
 				5C9AF4FC2119998E00700EDF /* MessageUI.framework in Frameworks */,
 				5C9AF4FA2119998300700EDF /* CoreData.framework in Frameworks */,
 				5C9AF4F82119997700700EDF /* SystemConfiguration.framework in Frameworks */,
 				5C9AF4F62119996D00700EDF /* libz.1.dylib in Frameworks */,
+				A39C03E7233A2E6D006D640B /* AccuraOCR.a in Frameworks */,
 				5C9AF4F42119995800700EDF /* libsqlite3.dylib in Frameworks */,
-				5C67D9A22111E47900154EB7 /* opencv2.framework in Frameworks */,
-				5C9AF4C7211995B400700EDF /* LibXL.framework in Frameworks */,
 				5B7402023C93EFBD3A735D1A /* Pods_Accura_Scan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,12 +427,12 @@
 		5C67D96A2111E02100154EB7 /* AccuraScan */ = {
 			isa = PBXGroup;
 			children = (
-				5C67D9A12111E47800154EB7 /* opencv2.framework */,
-				5C9AF4C6211995B300700EDF /* LibXL.framework */,
+				A39C03E1233A2DF5006D640B /* LibXL.framework */,
+				A34DB3A8233A2A4F00A7191C /* opencv2.framework */,
 				030FD40621E4CF370084B5A8 /* CustomAfnetwork */,
 				AE1CCF93231FC050003F0B50 /* Api Calling */,
 				AE1CCF94231FC0A6003F0B50 /* External */,
-				AE1CCF95231FC17A003F0B50 /* Framework */,
+				A39C03E3233A2E6D006D640B /* Framework */,
 				AE1CCF96231FC28A003F0B50 /* License */,
 				8113DC8222EDA39300A466E3 /* FaceMatch */,
 				5C94E01C211ACA8200428686 /* Font */,
@@ -573,7 +574,7 @@
 				AEC4B9BE23262EC40046426C /* .gitignore */,
 				030A72B921EA09270058B664 /* me.png */,
 				03F05943224A053700A63B3C /* cam.png */,
-				030CCEF321DF9BBB00B20A52 /* ZoomAuthenticationHybrid.framework */,
+				A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */,
 				6104CC7820BB4E6D00AC428E /* CodeScan */,
 				6104CC7720BB4E6D00AC428E /* Products */,
 				3EA25990B673F8362DC1D155 /* Pods */,
@@ -796,6 +797,7 @@
 		934DB65DAB247E2C5F8233CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3BD2D5F2339E4D900C10E07 /* libz.tbd */,
 				18FCC8E9230BD23900A5FB90 /* MobileCoreServices.framework */,
 				5CA3B78D2144071200A5867A /* AVFoundation.framework */,
 				5C9AF51121199A2700700EDF /* CoreGraphics.framework */,
@@ -821,6 +823,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A39C03E3233A2E6D006D640B /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A39C03E4233A2E6D006D640B /* AccuraFace.a */,
+				A39C03E5233A2E6D006D640B /* AccuraOCR.a */,
+			);
+			name = Framework;
+			path = License/Framework;
+			sourceTree = "<group>";
+		};
 		AE1CCF93231FC050003F0B50 /* Api Calling */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,16 +852,6 @@
 				8113DC7822ED989700A466E3 /* model2.dat */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		AE1CCF95231FC17A003F0B50 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				AE2688F72322727200C14E2E /* AccuraFace.a */,
-				AE2688F62322726C00C14E2E /* AccuraOCR.a */,
-			);
-			name = Framework;
-			path = License/Framework;
 			sourceTree = "<group>";
 		};
 		AE1CCF96231FC28A003F0B50 /* License */ = {
@@ -872,8 +874,8 @@
 				6104CC7220BB4E6D00AC428E /* Sources */,
 				6104CC7320BB4E6D00AC428E /* Frameworks */,
 				6104CC7420BB4E6D00AC428E /* Resources */,
-				034DF42A21E32D7C0090A360 /* Embed Frameworks */,
 				A3A26B6B645BE72BE54F45AC /* [CP] Embed Pods Frameworks */,
+				A39C03EC233A2F06006D640B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1210,7 +1212,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4512A7270DA0EFB6B68CCA9 /* Pods-Accura Scan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1221,11 +1223,11 @@
 				DEVELOPMENT_TEAM = JA79VPTEAU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/..\"",
 					"$(inherited)",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CodeScan/FaceMap",
+					"$(PROJECT_DIR)/CodeScan",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan/Framework",
 				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = CodeScan/Info.plist;
@@ -1237,19 +1239,52 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan",
 					"$(PROJECT_DIR)/CodeScan",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan/FaceMatch/Framework",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan/Framework",
 					"$(PROJECT_DIR)/CodeScan/AccuraScan/License/Framework",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan/FaceMatch",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SweeterSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.accura.scan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "Common Certy";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeScan/AccuraScan/Accura Scan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1259,7 +1294,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A3BD2BF48CC8B09BF1D1065E /* Pods-Accura Scan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1271,10 +1306,10 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/..\"",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/CodeScan",
 					"$(PROJECT_DIR)/CodeScan/AccuraScan",
-					"$(PROJECT_DIR)/CodeScan/FaceMap",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan/Framework",
 				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = CodeScan/Info.plist;
@@ -1286,17 +1321,51 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan",
 					"$(PROJECT_DIR)/CodeScan",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan/FaceMatch/Framework",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan",
+					"$(PROJECT_DIR)/CodeScan/AccuraScan/Framework",
 					"$(PROJECT_DIR)/CodeScan/AccuraScan/License/Framework",
-					"$(PROJECT_DIR)/CodeScan/AccuraScan/FaceMatch",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SweeterSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.accura.scan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "Common Certy";
 				SWIFT_OBJC_BRIDGING_HEADER = "CodeScan/AccuraScan/Accura Scan-Bridging-Header.h";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

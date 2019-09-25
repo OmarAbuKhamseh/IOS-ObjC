@@ -1149,7 +1149,7 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
     }else if (dictResultData[KEY_TITLE] != nil || dictResultData[KEY_VALUE] != nil){
         return 44.0;
     }else if (dictResultData[KEY_DOC1_IMAGE] != nil || dictResultData[KEY_DOC2_IMAGE] != nil){
-        return 230.0;
+        return 240.0;
     }else{
         return 0.0;
     }

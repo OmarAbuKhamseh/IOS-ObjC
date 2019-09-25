@@ -278,19 +278,32 @@
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltb-Tr-pdT" userLabel="View Bottom">
                                 <rect key="frame" x="0.0" y="518" width="414" height="218"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bz4-Gt-xSE" userLabel="View Top">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginsacnlogo" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-Nv-uuw">
+                                        <rect key="frame" x="87" y="60" width="240" height="148"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="uEd-wQ-Njd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gF5-Nv-uuw" firstAttribute="top" secondItem="bz4-Gt-xSE" secondAttribute="top" constant="60" id="ACb-gZ-trZ"/>
+                                    <constraint firstItem="gF5-Nv-uuw" firstAttribute="centerX" secondItem="bz4-Gt-xSE" secondAttribute="centerX" id="UOa-Pq-IIc"/>
+                                    <constraint firstAttribute="bottom" secondItem="gF5-Nv-uuw" secondAttribute="bottom" constant="10" id="oUf-VD-1Vz"/>
+                                </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vw-AM-pF6" userLabel="View  Left">
                                 <rect key="frame" x="0.0" y="218" width="57" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUc-Wy-MjP" userLabel="View  Right">
                                 <rect key="frame" x="357" y="218" width="57" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOw-3p-p9P">
                                 <rect key="frame" x="57" y="218" width="300" height="300"/>
@@ -306,7 +319,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Aller-Bold" family="Aller" pointSize="20"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelAction:" destination="ggH-lK-uK3" eventType="touchUpInside" id="ahp-K1-lf3"/>
@@ -317,7 +330,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Aller-Bold" family="Aller" pointSize="20"/>
                                 <state key="normal" title="Use Photo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="usePhotoAction:" destination="ggH-lK-uK3" eventType="touchUpInside" id="KQD-Ru-dVQ"/>
@@ -384,6 +397,7 @@
                         <outlet property="btnUse" destination="hSB-mV-k1v" id="SUz-vX-aje"/>
                         <outlet property="btn_cancel" destination="Lql-NU-oAt" id="ETg-R4-MhD"/>
                         <outlet property="btn_get_info" destination="N3Y-rB-c8F" id="dCc-Ys-ffq"/>
+                        <outlet property="imageViewLogo" destination="gF5-Nv-uuw" id="vIN-nv-KYd"/>
                         <outlet property="img" destination="2fO-fg-TmN" id="r5f-au-axI"/>
                         <outlet property="previewView" destination="K4A-Ku-gcc" id="y5e-VR-EK8"/>
                     </connections>
