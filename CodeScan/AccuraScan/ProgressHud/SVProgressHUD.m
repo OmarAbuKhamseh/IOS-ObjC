@@ -1,11 +1,5 @@
 //
 //  SVProgressHUD.m
-//
-//  Created by Sam Vermette on 27.03.11.
-//  Copyright 2011 Sam Vermette. All rights reserved.
-//
-//  https://github.com/samvermette/SVProgressHUD
-//
 
 #if !__has_feature(objc_arc)
 #error SVProgressHUD is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
@@ -40,10 +34,6 @@ CGFloat SVProgressHUDRingThickness = 6;
 @property (nonatomic, strong) CAShapeLayer *ringLayer;
 
 @property (nonatomic, readonly) CGFloat visibleKeyboardHeight;
-
-//- (void)showProgress:(float)progress
-//              status:(NSString*)string
-//            maskType:(SVProgressHUDMaskType)hudMaskType;
 
 - (void)showImage:(UIImage*)image
            status:(NSString*)status
@@ -212,11 +202,6 @@ CGFloat SVProgressHUDRingThickness = 6;
     BOOL imageUsed = (self.imageView.image) || (self.imageView.hidden);
     
     if(string) {
-        
-//        CGSize size = [string sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17.0f]}];
-//        
-//        // Values are fractional -- you should take the ceilf to get equivalent values
-//        CGSize stringSize = CGSizeMake(ceilf(size.width), ceilf(size.height));
         
         CGSize stringSize = [string sizeWithFont:self.stringLabel.font constrainedToSize:CGSizeMake(200, 300)];
         stringWidth = stringSize.width;
@@ -535,10 +520,6 @@ CGFloat SVProgressHUDRingThickness = 6;
                              [[NSNotificationCenter defaultCenter] postNotificationName:SVProgressHUDDidDisappearNotification
                                                                                  object:nil
                                                                                userInfo:notificationUserInfo];
-                             
-                             // uncomment to make sure UIWindow is gone from app.windows
-                             //NSLog(@"%@", [UIApplication sharedApplication].windows);
-                             //NSLog(@"keyWindow = %@", [UIApplication sharedApplication].keyWindow);
                          }
                      }];
 }

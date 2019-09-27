@@ -13,10 +13,6 @@
 		08CBD74B23003811005A0C9C /* PostResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CBD74A23003811005A0C9C /* PostResult.swift */; };
 		18FCC8EA230BD23A00A5FB90 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FCC8E9230BD23900A5FB90 /* MobileCoreServices.framework */; };
 		5B7402023C93EFBD3A735D1A /* Pods_Accura_Scan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CECF16C6E84083F97DABCB3 /* Pods_Accura_Scan.framework */; };
-		5C2D6E9920CA406300031D42 /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D6E9220CA406300031D42 /* AFWrapper.swift */; };
-		5C2D6E9A20CA406300031D42 /* CommonErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D6E9320CA406300031D42 /* CommonErrorAlert.swift */; };
-		5C2D6E9D20CA406300031D42 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D6E9720CA406300031D42 /* Rechability.swift */; };
-		5C2D6E9E20CA406300031D42 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D6E9820CA406300031D42 /* API.swift */; };
 		5C67D96E2111E03600154EB7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D96D2111E03600154EB7 /* ListViewController.m */; };
 		5C67D9702111E1DD00154EB7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D96F2111E1DD00154EB7 /* MainStoryboard_iPhone.storyboard */; };
 		5C67D9742111E29E00154EB7 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9712111E29D00154EB7 /* ListTableViewCell.m */; };
@@ -75,7 +71,6 @@
 		6104CC8420BB4E6E00AC428E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6104CC8320BB4E6E00AC428E /* Assets.xcassets */; };
 		6104CC9320BB515E00AC428E /* CodeScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104CC9220BB515E00AC428E /* CodeScanVC.swift */; };
 		617EB0C220BB521700BCBFD9 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EB0C120BB521700BCBFD9 /* UIViewControllerExtensions.swift */; };
-		617EB0C420BB537B00BCBFD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EB0C320BB537B00BCBFD9 /* Constants.swift */; };
 		617EB0CC20BB609900BCBFD9 /* SelectCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EB0CB20BB609900BCBFD9 /* SelectCodeVC.swift */; };
 		617EB0CE20BB60A800BCBFD9 /* SelectCodeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617EB0CD20BB60A800BCBFD9 /* SelectCodeVC.storyboard */; };
 		617EB0D220BB655300BCBFD9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617EB0D120BB655300BCBFD9 /* UIColorExtensions.swift */; };
@@ -100,22 +95,12 @@
 		8113DC9222EDA6DD00A466E3 /* FaceImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8C22EDA6DC00A466E3 /* FaceImageView.m */; };
 		8113DC9322EDA6DD00A466E3 /* DetectResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8D22EDA6DC00A466E3 /* DetectResult.m */; };
 		8113DC9422EDA6DD00A466E3 /* EngineWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8E22EDA6DC00A466E3 /* EngineWrapper.mm */; };
-		84D9F2B9214638CF005DE88E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2A5214638CF005DE88E /* FMDatabaseQueue.m */; };
-		84D9F2BA214638CF005DE88E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2A8214638CF005DE88E /* FMDatabaseAdditions.m */; };
-		84D9F2BB214638CF005DE88E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2A9214638CF005DE88E /* FMDatabase.m */; };
-		84D9F2BC214638CF005DE88E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2AC214638CF005DE88E /* FMDatabasePool.m */; };
-		84D9F2BD214638CF005DE88E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2AD214638CF005DE88E /* FMResultSet.m */; };
-		84D9F2BE214638CF005DE88E /* NDHTMLtoPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2B0214638CF005DE88E /* NDHTMLtoPDF.m */; };
-		84D9F2BF214638CF005DE88E /* ModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2B2214638CF005DE88E /* ModelManager.m */; };
-		84D9F2C0214638CF005DE88E /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2B3214638CF005DE88E /* Model.m */; };
-		84D9F2C1214638CF005DE88E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2B4214638CF005DE88E /* Util.m */; };
-		84D9F2C2214638CF005DE88E /* AccuraScan.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 84D9F2B5214638CF005DE88E /* AccuraScan.sqlite */; };
-		84D9F2CC214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2C6214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		84D9F2CD214638DE005DE88E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2C7214638DE005DE88E /* TPKeyboardAvoidingTableView.m */; };
-		84D9F2CE214638DE005DE88E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2C8214638DE005DE88E /* TPKeyboardAvoidingScrollView.m */; };
-		84D9F2CF214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9F2CA214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m */; };
 		A30854CB23083FA8007B23E8 /* accuraface.license in Resources */ = {isa = PBXBuildFile; fileRef = A30854CA23083FA8007B23E8 /* accuraface.license */; };
 		A34DB3A9233A2A4F00A7191C /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34DB3A8233A2A4F00A7191C /* opencv2.framework */; };
+		A387F544233E16480076D86F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F53A233E16480076D86F /* Constants.swift */; };
+		A387F548233E16480076D86F /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F540233E16480076D86F /* Rechability.swift */; };
+		A387F549233E16480076D86F /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F542233E16480076D86F /* AFWrapper.swift */; };
+		A387F54A233E16480076D86F /* CommonErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F543233E16480076D86F /* CommonErrorAlert.swift */; };
 		A39C03E2233A2DF5006D640B /* LibXL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E1233A2DF5006D640B /* LibXL.framework */; };
 		A39C03E6233A2E6D006D640B /* AccuraFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E4233A2E6D006D640B /* AccuraFace.a */; };
 		A39C03E7233A2E6D006D640B /* AccuraOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E5233A2E6D006D640B /* AccuraOCR.a */; };
@@ -158,10 +143,6 @@
 		08CBD74A23003811005A0C9C /* PostResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostResult.swift; sourceTree = "<group>"; };
 		18FCC8E9230BD23900A5FB90 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1B1E5ACBB7521B13715541C2 /* Pods_AccuraSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccuraSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C2D6E9220CA406300031D42 /* AFWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
-		5C2D6E9320CA406300031D42 /* CommonErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonErrorAlert.swift; sourceTree = "<group>"; };
-		5C2D6E9720CA406300031D42 /* Rechability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
-		5C2D6E9820CA406300031D42 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5C67D96B2111E03500154EB7 /* Accura Scan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Accura Scan-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C67D96C2111E03600154EB7 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		5C67D96D2111E03600154EB7 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
@@ -243,7 +224,6 @@
 		6104CC8820BB4E6E00AC428E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6104CC9220BB515E00AC428E /* CodeScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanVC.swift; sourceTree = "<group>"; };
 		617EB0C120BB521700BCBFD9 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
-		617EB0C320BB537B00BCBFD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		617EB0CB20BB609900BCBFD9 /* SelectCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCodeVC.swift; sourceTree = "<group>"; };
 		617EB0CD20BB60A800BCBFD9 /* SelectCodeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectCodeVC.storyboard; sourceTree = "<group>"; };
 		617EB0D120BB655300BCBFD9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -279,36 +259,13 @@
 		8113DC8C22EDA6DC00A466E3 /* FaceImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceImageView.m; sourceTree = "<group>"; };
 		8113DC8D22EDA6DC00A466E3 /* DetectResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectResult.m; sourceTree = "<group>"; };
 		8113DC8E22EDA6DC00A466E3 /* EngineWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EngineWrapper.mm; sourceTree = "<group>"; };
-		84D9F2A4214638CF005DE88E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		84D9F2A5214638CF005DE88E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		84D9F2A6214638CF005DE88E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		84D9F2A7214638CF005DE88E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		84D9F2A8214638CF005DE88E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		84D9F2A9214638CF005DE88E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		84D9F2AA214638CF005DE88E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		84D9F2AB214638CF005DE88E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		84D9F2AC214638CF005DE88E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		84D9F2AD214638CF005DE88E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		84D9F2AF214638CF005DE88E /* NDHTMLtoPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDHTMLtoPDF.h; sourceTree = "<group>"; };
-		84D9F2B0214638CF005DE88E /* NDHTMLtoPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDHTMLtoPDF.m; sourceTree = "<group>"; };
-		84D9F2B2214638CF005DE88E /* ModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelManager.m; sourceTree = "<group>"; };
-		84D9F2B3214638CF005DE88E /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
-		84D9F2B4214638CF005DE88E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
-		84D9F2B5214638CF005DE88E /* AccuraScan.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AccuraScan.sqlite; sourceTree = "<group>"; };
-		84D9F2B6214638CF005DE88E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		84D9F2B7214638CF005DE88E /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		84D9F2B8214638CF005DE88E /* ModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelManager.h; sourceTree = "<group>"; };
-		84D9F2C4214638DE005DE88E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		84D9F2C5214638DE005DE88E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		84D9F2C6214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		84D9F2C7214638DE005DE88E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		84D9F2C8214638DE005DE88E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		84D9F2C9214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		84D9F2CA214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		84D9F2CB214638DE005DE88E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		9CECF16C6E84083F97DABCB3 /* Pods_Accura_Scan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Accura_Scan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30854CA23083FA8007B23E8 /* accuraface.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = accuraface.license; sourceTree = "<group>"; };
 		A34DB3A8233A2A4F00A7191C /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		A387F53A233E16480076D86F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A387F540233E16480076D86F /* Rechability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
+		A387F542233E16480076D86F /* AFWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
+		A387F543233E16480076D86F /* CommonErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonErrorAlert.swift; sourceTree = "<group>"; };
 		A39C03E1233A2DF5006D640B /* LibXL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LibXL.framework; sourceTree = "<group>"; };
 		A39C03E4233A2E6D006D640B /* AccuraFace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraFace.a; sourceTree = "<group>"; };
 		A39C03E5233A2E6D006D640B /* AccuraOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraOCR.a; sourceTree = "<group>"; };
@@ -405,25 +362,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5C2D6E9020CA3FF400031D42 /* Comman */ = {
-			isa = PBXGroup;
-			children = (
-				5C2D6E9820CA406300031D42 /* API.swift */,
-				5C2D6E9720CA406300031D42 /* Rechability.swift */,
-				5C2D6E9120CA406300031D42 /* WSCall */,
-			);
-			path = Comman;
-			sourceTree = "<group>";
-		};
-		5C2D6E9120CA406300031D42 /* WSCall */ = {
-			isa = PBXGroup;
-			children = (
-				5C2D6E9220CA406300031D42 /* AFWrapper.swift */,
-				5C2D6E9320CA406300031D42 /* CommonErrorAlert.swift */,
-			);
-			path = WSCall;
-			sourceTree = "<group>";
-		};
 		5C67D96A2111E02100154EB7 /* AccuraScan */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,10 +378,6 @@
 				5C67D98A2111E44E00154EB7 /* json */,
 				5C67D9882111E44500154EB7 /* include */,
 				5C67D9842111E43D00154EB7 /* GlobalMethods */,
-				84D9F2C3214638DE005DE88E /* TPKeyboardAvoiding */,
-				84D9F2A3214638CF005DE88E /* fmdb */,
-				84D9F2B1214638CF005DE88E /* Model */,
-				84D9F2AE214638CF005DE88E /* PdfFile */,
 				5C67D97C2111E3E100154EB7 /* ResultTableViewCell */,
 				5C67D96B2111E03500154EB7 /* Accura Scan-Bridging-Header.h */,
 				AED687662317F99A00E2CFEA /* ShowResultVC.h */,
@@ -637,8 +571,6 @@
 		617EB0C720BB53AE00BCBFD9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5C2D6E9020CA3FF400031D42 /* Comman */,
-				617EB0C320BB537B00BCBFD9 /* Constants.swift */,
 				617EB0C820BB53B300BCBFD9 /* Extensions */,
 			);
 			path = Utils;
@@ -647,6 +579,8 @@
 		617EB0C820BB53B300BCBFD9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A387F53B233E16480076D86F /* Comman */,
+				A387F53A233E16480076D86F /* Constants.swift */,
 				617EB0DF20BB704E00BCBFD9 /* Foundation */,
 				617EB0C920BB53B800BCBFD9 /* UIKit */,
 			);
@@ -739,61 +673,6 @@
 			path = FaceMatch;
 			sourceTree = "<group>";
 		};
-		84D9F2A3214638CF005DE88E /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				84D9F2A4214638CF005DE88E /* FMDatabase.h */,
-				84D9F2A5214638CF005DE88E /* FMDatabaseQueue.m */,
-				84D9F2A6214638CF005DE88E /* FMResultSet.h */,
-				84D9F2A7214638CF005DE88E /* FMDatabasePool.h */,
-				84D9F2A8214638CF005DE88E /* FMDatabaseAdditions.m */,
-				84D9F2A9214638CF005DE88E /* FMDatabase.m */,
-				84D9F2AA214638CF005DE88E /* FMDatabaseQueue.h */,
-				84D9F2AB214638CF005DE88E /* FMDatabaseAdditions.h */,
-				84D9F2AC214638CF005DE88E /* FMDatabasePool.m */,
-				84D9F2AD214638CF005DE88E /* FMResultSet.m */,
-			);
-			path = fmdb;
-			sourceTree = "<group>";
-		};
-		84D9F2AE214638CF005DE88E /* PdfFile */ = {
-			isa = PBXGroup;
-			children = (
-				84D9F2AF214638CF005DE88E /* NDHTMLtoPDF.h */,
-				84D9F2B0214638CF005DE88E /* NDHTMLtoPDF.m */,
-			);
-			path = PdfFile;
-			sourceTree = "<group>";
-		};
-		84D9F2B1214638CF005DE88E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				84D9F2B2214638CF005DE88E /* ModelManager.m */,
-				84D9F2B3214638CF005DE88E /* Model.m */,
-				84D9F2B4214638CF005DE88E /* Util.m */,
-				84D9F2B5214638CF005DE88E /* AccuraScan.sqlite */,
-				84D9F2B6214638CF005DE88E /* Util.h */,
-				84D9F2B7214638CF005DE88E /* Model.h */,
-				84D9F2B8214638CF005DE88E /* ModelManager.h */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		84D9F2C3214638DE005DE88E /* TPKeyboardAvoiding */ = {
-			isa = PBXGroup;
-			children = (
-				84D9F2C4214638DE005DE88E /* TPKeyboardAvoidingScrollView.h */,
-				84D9F2C5214638DE005DE88E /* TPKeyboardAvoidingCollectionView.h */,
-				84D9F2C6214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				84D9F2C7214638DE005DE88E /* TPKeyboardAvoidingTableView.m */,
-				84D9F2C8214638DE005DE88E /* TPKeyboardAvoidingScrollView.m */,
-				84D9F2C9214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				84D9F2CA214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m */,
-				84D9F2CB214638DE005DE88E /* TPKeyboardAvoidingTableView.h */,
-			);
-			path = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
 		934DB65DAB247E2C5F8233CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -821,6 +700,24 @@
 				9CECF16C6E84083F97DABCB3 /* Pods_Accura_Scan.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A387F53B233E16480076D86F /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				A387F540233E16480076D86F /* Rechability.swift */,
+				A387F541233E16480076D86F /* WSCall */,
+			);
+			path = Comman;
+			sourceTree = "<group>";
+		};
+		A387F541233E16480076D86F /* WSCall */ = {
+			isa = PBXGroup;
+			children = (
+				A387F542233E16480076D86F /* AFWrapper.swift */,
+				A387F543233E16480076D86F /* CommonErrorAlert.swift */,
+			);
+			path = WSCall;
 			sourceTree = "<group>";
 		};
 		A39C03E3233A2E6D006D640B /* Framework */ = {
@@ -937,7 +834,6 @@
 				6104CC8420BB4E6E00AC428E /* Assets.xcassets in Resources */,
 				03F05944224A053A00A63B3C /* cam.png in Resources */,
 				5C94E027211ACA8200428686 /* Aller_Std_Lt.ttf in Resources */,
-				84D9F2C2214638CF005DE88E /* AccuraScan.sqlite in Resources */,
 				5C94E026211ACA8200428686 /* Aller_Std_It.ttf in Resources */,
 				8113DC7B22ED98A000A466E3 /* model2.dat in Resources */,
 				8113DC7D22ED98A000A466E3 /* model1.dat in Resources */,
@@ -1009,15 +905,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				617EB0C420BB537B00BCBFD9 /* Constants.swift in Sources */,
 				8113DC8F22EDA6DD00A466E3 /* NSFaceRegion.m in Sources */,
 				617EB0EB20BB8F2B00BCBFD9 /* UIViewExtensions.swift in Sources */,
 				AE1CCF92231FBDA2003F0B50 /* CustomAFNetWorking.m in Sources */,
-				84D9F2C0214638CF005DE88E /* Model.m in Sources */,
-				84D9F2BB214638CF005DE88E /* FMDatabase.m in Sources */,
 				AE498FAD231A576F00D04C00 /* ResultTableCell1.m in Sources */,
-				84D9F2BA214638CF005DE88E /* FMDatabaseAdditions.m in Sources */,
-				84D9F2CC214638DE005DE88E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5C67D9B22111E4D200154EB7 /* WebAPIRequest.m in Sources */,
 				5C67D97B2111E3C700154EB7 /* ViewController.mm in Sources */,
 				5C67D9C12111E55700154EB7 /* ImageViewController.m in Sources */,
@@ -1026,45 +917,36 @@
 				5C7D02582143E5DC00F05ADE /* DrivingPDFstringTableViewCell.swift in Sources */,
 				617EB0E320BB78B300BCBFD9 /* MainV.swift in Sources */,
 				AED687682317F99A00E2CFEA /* ShowResultVC.m in Sources */,
-				84D9F2CF214638DE005DE88E /* TPKeyboardAvoidingCollectionView.m in Sources */,
-				84D9F2BD214638CF005DE88E /* FMResultSet.m in Sources */,
 				617EB0E520BB78D100BCBFD9 /* ScanRegionV.swift in Sources */,
 				5C7D024A214396A900F05ADE /* DrivePDFTableViewCell.swift in Sources */,
 				5C67D9A82111E48C00154EB7 /* SVProgressHUD.m in Sources */,
 				AE498FB2231A578F00D04C00 /* UserImgTableCell1.m in Sources */,
 				617EB0DC20BB6A4F00BCBFD9 /* BarcodeTypeHFV.swift in Sources */,
+				A387F549233E16480076D86F /* AFWrapper.swift in Sources */,
 				617EB0E920BB7CEF00BCBFD9 /* SineWaveV.swift in Sources */,
 				617EB0E120BB705D00BCBFD9 /* NSObjectExtensions.swift in Sources */,
+				A387F54A233E16480076D86F /* CommonErrorAlert.swift in Sources */,
 				5C7D02562143E5B800F05ADE /* Resultpdf417ViewController.swift in Sources */,
-				5C2D6E9E20CA406300031D42 /* API.swift in Sources */,
 				DC75E60220BF36FB0096BC5A /* CodeInfoV.swift in Sources */,
 				617EB0CC20BB609900BCBFD9 /* SelectCodeVC.swift in Sources */,
 				8113DC7122EBB31D00A466E3 /* FirstTableViewCell.m in Sources */,
 				5C67D9872111E43E00154EB7 /* GlobalMethods.m in Sources */,
 				08CBD74B23003811005A0C9C /* PostResult.swift in Sources */,
+				A387F544233E16480076D86F /* Constants.swift in Sources */,
 				5C67D9962111E44E00154EB7 /* NSObject+SBJSON.m in Sources */,
 				5CC9862421180B9000A0E290 /* AppDelegate.swift in Sources */,
 				8113DC9022EDA6DD00A466E3 /* ImageHelper.m in Sources */,
-				84D9F2B9214638CF005DE88E /* FMDatabaseQueue.m in Sources */,
 				5C67D9C52111E78500154EB7 /* PlaceViewController.swift in Sources */,
 				5C67D9982111E44E00154EB7 /* SBJsonBase.m in Sources */,
 				8113DC9322EDA6DD00A466E3 /* DetectResult.m in Sources */,
 				617EB0C220BB521700BCBFD9 /* UIViewControllerExtensions.swift in Sources */,
 				617EB0D820BB69DD00BCBFD9 /* BarcodeTypeTVC.swift in Sources */,
-				84D9F2CE214638DE005DE88E /* TPKeyboardAvoidingScrollView.m in Sources */,
-				84D9F2BF214638CF005DE88E /* ModelManager.m in Sources */,
-				84D9F2BC214638CF005DE88E /* FMDatabasePool.m in Sources */,
-				84D9F2C1214638CF005DE88E /* Util.m in Sources */,
-				5C2D6E9920CA406300031D42 /* AFWrapper.swift in Sources */,
-				5C2D6E9A20CA406300031D42 /* CommonErrorAlert.swift in Sources */,
 				8113DC9422EDA6DD00A466E3 /* EngineWrapper.mm in Sources */,
-				84D9F2BE214638CF005DE88E /* NDHTMLtoPDF.m in Sources */,
-				84D9F2CD214638DE005DE88E /* TPKeyboardAvoidingTableView.m in Sources */,
-				5C2D6E9D20CA406300031D42 /* Rechability.swift in Sources */,
 				AE8D83C3232234C600F089E7 /* FaceMatchController.m in Sources */,
 				AE498FA8231A575800D04C00 /* DocumentTableCell1.m in Sources */,
 				5C67D9C32111E55700154EB7 /* PlacePanCardViewController.m in Sources */,
 				5C67D9B62111E54F00154EB7 /* PlaceAdharViewController.m in Sources */,
+				A387F548233E16480076D86F /* Rechability.swift in Sources */,
 				8113DC6D22EBB2A800A466E3 /* FirstViewController.m in Sources */,
 				8113DC9122EDA6DD00A466E3 /* FaceView.m in Sources */,
 				6104CC9320BB515E00AC428E /* CodeScanVC.swift in Sources */,

@@ -1,11 +1,7 @@
 //
 //  CommonErrorAlert.swift
-//  KeyofLife
 //
-//  Created by MacMini on 06/09/17.
-//  Copyright © 2017 mac. All rights reserved.
-//
-
+// ***************** file use to display alert in swift *****************
 import UIKit
 
 class CommonErrorAlert: NSObject

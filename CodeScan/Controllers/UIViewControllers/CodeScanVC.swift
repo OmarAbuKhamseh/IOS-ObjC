@@ -1,10 +1,5 @@
 //
 //  CodeScanVC.swift
-//  CodeScan
-//
-//  Created by Stephen Muscarella on 5/27/18.
-//  Copyright © 2018 Elite Development LLC. All rights reserved.
-//
 
 import UIKit
 import AVFoundation
@@ -16,6 +11,7 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
     @IBOutlet var mainV: MainV!
     @IBOutlet weak var barCodeScannerView: UIView!
     @IBOutlet weak var selectBarcodeTypeBtn: UIButton!
+
     var mutableArray: NSMutableArray = []
     var keyArr: NSMutableArray = []
     var valueArr: NSMutableArray = []
@@ -159,6 +155,7 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
         }
 
     }
+    
     @objc func startCameraforscan() {
         tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(dismissAlert))
         let captureTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CodeScanVC.cameraViewTapped(_:)))
@@ -182,6 +179,7 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
         group.wait()
 
     }
+    
     @objc func backBtnPressed() {
         if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
@@ -197,6 +195,7 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
         navigationController?.popViewController(animated: true)
         
     }
+    
     @IBAction func backAction(_ sender: Any)
     {
         if (captureSession?.isRunning == true) {
@@ -205,6 +204,7 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
         mainV.removeAlert()
         navigationController?.popViewController(animated: true)
     }
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -443,15 +443,11 @@ class CodeScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate, Sele
                 if parts.count > 1 {
                     str = parts[parts.count-1]
                 }
-                
-                
             }
             let count = str.count
             
             if count > 3 {
-                
-                
-                (str as NSString).substring(with: NSRange(location: 0, length: 3))
+               (str as NSString).substring(with: NSRange(location: 0, length: 3))
                 let key  = str.index(str.startIndex, offsetBy:3)
                 let key1 = String(str[..<key])
                 let indexsd = str.index(str.startIndex, offsetBy: 3)

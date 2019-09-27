@@ -1,10 +1,6 @@
 //
 //  FaceMatchController.m
-//  Accura Scan
-//
-//  Created by iOS on 28/7/2019.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
+
 
 #import "FaceMatchController.h"
 #import "FirstViewController.h"
@@ -44,7 +40,7 @@ UIImagePickerController* picker;
     //Check enginewrapper engine is init
     bool bInit = [EngineWrapper IsEngineInit];
     if (!bInit)
-        [EngineWrapper FaceEngineInit];
+        [EngineWrapper FaceEngineInit]; //Declaration EngineWrapper
     [self.imgSource setHidden:false];
     [self.imgTarget setHidden:false];
     [self.lblUpload setHidden:false];
@@ -54,7 +50,7 @@ UIImagePickerController* picker;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    int nRet = [EngineWrapper GetEngineInitValue];
+    int nRet = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status value
     if (nRet == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (nRet == -15)
@@ -75,7 +71,7 @@ UIImagePickerController* picker;
     
 }
 
-
+//MARK:- Image Rotation
 - (void)loadPhotoCaptured
 {
     UIImage *img = [[[self allImageViewsSubViews:[[[picker viewControllers]firstObject] view]] lastObject] image];
@@ -89,6 +85,12 @@ UIImagePickerController* picker;
     }
 }
 
+/**
+ * This method use get captured view
+ * Parameters to Pass: UIView
+ *
+ * This method will return array of UIImageview
+ */
 - (NSMutableArray*)allImageViewsSubViews:(UIView *)view
 {
     NSMutableArray *arrImageViews=[NSMutableArray array];
@@ -106,7 +108,7 @@ UIImagePickerController* picker;
     return arrImageViews;
 }
 
-
+//MARK:- ImagePicker delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
         [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image ;
@@ -134,6 +136,12 @@ UIImagePickerController* picker;
    
 }
 
+/**
+ * This method use image convert particular size
+ * Parameters to Pass: UIImage and covert size
+ *
+ * This method will return convert UIImage
+ */
 - (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
@@ -150,13 +158,12 @@ UIImagePickerController* picker;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)backToViewController
-{
-    imageFirst=nil;
-    imageSecond=nil;
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
+/**
+ * This method use calculate faceMatch score
+ * Parameters to Pass: selected uiimage
+ *
+ */
 - (void) match:(UIImage*)image {
     
     if (selIndex == 1){
@@ -196,15 +203,15 @@ UIImagePickerController* picker;
     if (selIndex == 1) {
         if (faceRegion != nil){
             [self.imgSource setHidden:true];
-            [[self srcFView] setFaceRegion:faceRegion];
-            [[self srcFView] setImage:faceRegion.image];
+            [[self srcFView] setFaceRegion:faceRegion]; //Draw square face around
+            [[self srcFView] setImage:faceRegion.image]; //Set document image
             [[self srcFView] setNeedsDisplay];
 
         }
 
-        NSFaceRegion* face2 = [[self tgtFView] getFaceRegion];
+        NSFaceRegion* face2 = [[self tgtFView] getFaceRegion]; // Get image data
         if (face2 != nil) {
-            NSFaceRegion* face1 = [[self srcFView] getFaceRegion];
+            NSFaceRegion* face1 = [[self srcFView] getFaceRegion]; // Get image data
             NSFaceRegion* faceRegion2;
             if (face1 == nil) {
                 faceRegion2 = [EngineWrapper DetectSourceFaces:face2.image]; //Find UIImage in face
@@ -214,8 +221,8 @@ UIImagePickerController* picker;
                 faceRegion2 = [EngineWrapper DetectTargetFaces:face2.image feature1:face1.feature];
             }
             if (faceRegion2 != nil){
-                [[self tgtFView] setFaceRegion:faceRegion2];
-                [[self tgtFView] setImage:faceRegion2.image];
+                [[self tgtFView] setFaceRegion:faceRegion2]; //Draw square face around
+                [[self tgtFView] setImage:faceRegion2.image]; //Set document image
                 [[self tgtFView] setNeedsDisplay];
             }
         }
@@ -224,14 +231,14 @@ UIImagePickerController* picker;
             [self.imgTarget setHidden:true];
             [self.lblUpload setHidden:true];
             [self.imgUpload setHidden:true];
-            [[self tgtFView] setFaceRegion:faceRegion];
-            [[self tgtFView] setImage:faceRegion.image];
+            [[self tgtFView] setFaceRegion:faceRegion]; //Draw square face around
+            [[self tgtFView] setImage:faceRegion.image]; //Set document image
             [[self tgtFView] setNeedsDisplay];
         }
 
     }
-    NSFaceRegion* face1 = [[self srcFView] getFaceRegion];
-    NSFaceRegion* face2 = [[self tgtFView] getFaceRegion];
+    NSFaceRegion* face1 = [[self srcFView] getFaceRegion]; // Get image data
+    NSFaceRegion* face2 = [[self tgtFView] getFaceRegion]; // Get image data
 
      [SVProgressHUD dismiss];
     if (imageFirst == nil || imageSecond == nil) {
@@ -278,6 +285,7 @@ UIImagePickerController* picker;
     }
 }
 
+//MARK:- UIButton Action
 - (IBAction)galleryAction1:(id)sender {
     selIndex = 1;
     picker.delegate = self;

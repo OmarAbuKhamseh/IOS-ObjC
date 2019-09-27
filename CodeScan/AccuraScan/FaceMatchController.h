@@ -1,10 +1,6 @@
 //
 //  FaceMatchController.h
-//  Accura Scan
-//
-//  Created by iOS on 28/7/2019.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 #import "FaceView.h"

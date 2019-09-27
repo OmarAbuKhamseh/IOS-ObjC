@@ -1,10 +1,6 @@
 //
 //  CustomAFNetWorking.m
-//  MajesticCarRental
-//
-//  Created by Gaurav Parmar on 23/02/16.
-//  Copyright © 2016 Quantum Technolabs. All rights reserved.
-//
+
 
 #import "CustomAFNetWorking.h"
 #import "AFNetworking.h"
@@ -46,9 +42,7 @@
 {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    // manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    //   manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     [manager.requestSerializer setValue:@"f671dd0a8c37e69ab60730dfd332654e" forHTTPHeaderField:@"Api-Key"];
     UIImage *imageFirst = [parameter valueForKey:@"image1"];
     UIImage *imageSecond = [parameter valueForKey:@"image2"];
@@ -66,7 +60,6 @@
                                 mimeType:@"image/jpg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         NSLog(@"Progress  = %@",uploadProgress);
-        //printf("%s", uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -76,46 +69,17 @@
      return self;
 }
 
-
--(id)initWithGet:(NSString *)request withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.tag =cTag;
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [manager.requestSerializer setValue:@"dUfNhktz2Tcl32pGgbPTZ57QujOQBluh" forHTTPHeaderField:@"X-App-Token"];
-        [manager GET:request parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject)
-         {
-             [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
-         }
-             failure:^(NSURLSessionTask *operation, NSError *error)
-         {
-             [self.delegate customURLConnection:self withTag:self.tag didFailWithError:error];
-         }];
-    }
-    
-    return self;
-    
-}
 -(id)initWithPost:(NSString *)requeststr withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter ImageName :(UIImage *)image andImageKey: (NSString *)key
 {
     self = [super init];
     
     if (self)
     {
-        
-        
         NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:requeststr parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.7  ) name:key fileName:@"image.jpg" mimeType:@"image/jpeg"];
         } error:nil];
         
         // added
-       
         [request setValue:@"dUfNhktz2Tcl32pGgbPTZ57QujOQBluh" forHTTPHeaderField:@"X-App-Token"];
         
         
@@ -160,18 +124,12 @@
         NSURL  *url = [NSURL URLWithString:requeststr];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
-
-
-        
-
-       request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:requeststr parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+        request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:requeststr parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
             {
                 
             [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.7  ) name:key fileName:@"image.jpg" mimeType:@"image/jpeg"];
             [formData appendPartWithFileData:UIImageJPEGRepresentation(cellImage, 0.7  ) name:cellKey fileName:@"image1.jpg" mimeType:@"image/jpeg"];
         } error:nil];
-        
-        
         
         // added
         [request setValue:@"dUfNhktz2Tcl32pGgbPTZ57QujOQBluh" forHTTPHeaderField:@"X-App-Token"];
@@ -202,17 +160,10 @@
                       }];
         
         [uploadTask resume];    }
-    
-    
-    
-    
     return self;
     
 }
 
--(void)dummy
-{
-}
 -(id)initWithPostLogin:(NSString *)request withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter
 {
     self = [super init];
@@ -237,8 +188,8 @@
     }
     
     return self;
-    
 }
+
 -(id)initWithPostToken:(NSString *)request withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter
 {
     self = [super init];
@@ -249,9 +200,6 @@
               manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//        [manager.requestSerializer setValue:[[UserDefaultHelper sharedDefaults] getAccessToken] forHTTPHeaderField:@"Application Bearer"];
-       
-        
         [manager POST:request parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject)
          {
              [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
@@ -276,8 +224,6 @@
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
         manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        
-//        [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",[[UserDefaultHelper sharedDefaults] getAccessToken]] forHTTPHeaderField:@"Authorization"];
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"application/json"]forHTTPHeaderField:@"Content-Type"];
         
         [manager PUT:request parameters:parameter success:^(NSURLSessionTask *task, id responseObject)
@@ -291,82 +237,6 @@
     }
     
     return self;
-    
 }
--(id)initWithGetToken:(NSString *)request withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter
-{
-    self = [super init];
-    
-    if (self)
-    {
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:401];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:404];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:400];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:200];
-        
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-        manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//        [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",[[UserDefaultHelper sharedDefaults] getAccessToken]] forHTTPHeaderField:@"Authorization"];
-        [manager.requestSerializer setValue:[NSString stringWithFormat:@"application/json"]forHTTPHeaderField:@"Content-Type"];
-        
-        [manager GET:request parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject)
-         {
-             [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
-         }
-              failure:^(NSURLSessionTask *operation, NSError *error)
-         {
-             NSLog(@"%@",[error description]);
-             [self.delegate customURLConnection:self withTag:cTag didFailWithError:error];
-         }];
-    }
-    
-    return self;
-    
-}
--(id)initWithDeleteToken:(NSString *)request withTag:(int)cTag withParameter:(NSMutableDictionary *)parameter
-{
-    self = [super init];
-    
-    if (self)
-    {
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:401];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:404];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:400];
-        manager.responseSerializer.acceptableStatusCodes = [NSIndexSet indexSetWithIndex:200];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-        manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//        [manager.requestSerializer setValue:[[UserDefaultHelper sharedDefaults] getAccessToken] forHTTPHeaderField:@"Header-Field"];
-        [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [manager.requestSerializer setValue:@"dUfNhktz2Tcl32pGgbPTZ57QujOQBluh" forHTTPHeaderField:@"X-App-Token"];
-        
-//        [manager POST:request parameters:parameter progress:nil success:^(NSURLSessionTask *task, id responseObject)
-//         {
-//             [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
-//         }
-//              failure:^(NSURLSessionTask *operation, NSError *error)
-//         {
-//             NSLog(@"%@",[error description]);
-//             [self.delegate customURLConnection:self withTag:cTag didFailWithError:error];
-//         }];
-//
-        [manager DELETE:request parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            [self.delegate customURLConnectionDidFinishLoading:self withTag:cTag withResponse:responseObject];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"%@",[error description]);
-            [self.delegate customURLConnection:self withTag:cTag didFailWithError:error];
-        }];
-    }
-    
-    return self;
-    
-}
-
-
-
-
 
 @end

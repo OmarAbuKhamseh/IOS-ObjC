@@ -1,10 +1,5 @@
 //
 //  ShowResultVC.h
-//  Accura Scan
-//
-//  Created by kuldeep on 8/29/19.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
@@ -25,8 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)btnFaceMatchAction:(UIButton *)sender;
 - (IBAction)btnCancelAction:(UIButton *)sender;
 - (IBAction)btnBackAction:(UIButton *)sender;
-
-
 
 @end
 

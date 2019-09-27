@@ -1,26 +1,14 @@
 //
 //  PlacePanCardViewController.m
-//  AccuraSDK
-//
-//  Created by SSD on 13/07/18.
-//  Copyright © 2018 Alexander Shishkov & Kirill Kornyakov. All rights reserved.
-//
 
 #import "PlacePanCardViewController.h"
-#import "ModelManager.h"
 #import "WebServiceUrl.h"
 #import <MessageUI/MessageUI.h>
-#import "NDHTMLtoPDF.h"
 #include "LibXL/libxl.h"
 
 #import "ImageViewController.h"
-@interface PlacePanCardViewController ()<UIActionSheetDelegate,NDHTMLtoPDFDelegate,MFMailComposeViewControllerDelegate>
+@interface PlacePanCardViewController ()<UIActionSheetDelegate>
 {
-    BOOL isPdf;
-    NSMutableArray *dataArr,*scanInfoArray;
-    ModelManager *mgrObj;
-    
-    
 }
 @end
 
@@ -29,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    mgrObj=[ModelManager getInstance];
 
 }
 

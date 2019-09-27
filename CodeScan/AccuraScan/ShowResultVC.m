@@ -1,10 +1,5 @@
 //
 //  ShowResultVC.m
-//  Accura Scan
-//
-//  Created by kuldeep on 8/29/19.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
 
 #import "ShowResultVC.h"
 #import <ZoomAuthenticationHybrid/ZoomAuthenticationHybrid.h>
@@ -99,15 +94,17 @@ NSString* BackImgRotation = @"";
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    //Check enginewrapper engine is init
-    bool fmInit = [EngineWrapper IsEngineInit];
+    bool fmInit = [EngineWrapper IsEngineInit];  //Check engineWrapper init or not init
     if (!fmInit)
         [EngineWrapper FaceEngineInit]; // init enginewrapper
+  
+    /**
     //Check enginewrapper init Value
     //status list
     //-20 value is key not found
     //-15 License Invalid
-    int fmValue = [EngineWrapper GetEngineInitValue];
+    */
+    int fmValue = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status
     if (fmValue == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (fmValue == -15)
@@ -123,16 +120,16 @@ NSString* BackImgRotation = @"";
         _btnFaceMathch.hidden = NO;
         _btnLiveness.hidden = NO;
         
-        [self initializeZoom]; // zoomController init
+        [self initializeZoom]; //Set Zoom Controller
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadPhotoCaptured) name:@"_UIImagePickerControllerUserDidCaptureItem" object:nil];
     
     //Chcek scanning Type
     if([_isFrom isEqualToString:@"2"] || [_isFrom isEqualToString:@"3"]){
-        dictScanningData = [appDelegate dictStoreScanningData];
+        dictScanningData = [appDelegate dictStoreScanningData]; // Get Local Store Dictionary
     }else{
-        // get data from userdefaults
+        // Get data from userdefaults
         dictScanningData = [[NSUserDefaults standardUserDefaults] objectForKey:@"ScanningData"];
         fontImgRotation = [dictScanningData valueForKey:@"fontImageRotation"];
         BackImgRotation = [dictScanningData valueForKey:@"backImageRotation"];
@@ -147,7 +144,7 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
             }
             [_tblView reloadData];
         }
@@ -180,7 +177,7 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
             }
              [_tblView reloadData];
         }
@@ -269,9 +266,7 @@ NSString* BackImgRotation = @"";
         faceRegion = nil;
         //Check ImageData is exist or not
         if(photoImage != nil){
-            //EngineWrapper in pass UIImage
-            //retun face Image
-            faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+            faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
         }
         NSData *image_documentFontImage = [dictScanningData valueForKey:@"docfrontImage"];
         if (image_documentFontImage != nil){
@@ -311,18 +306,21 @@ NSString* BackImgRotation = @"";
     
     if (isFirst){
         isFirst = false;
-        [self setData];
+        [self setData]; // this function Called set data in tableView
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    [Zoom.sdk preload];
+    [Zoom.sdk preload]; // ZoomScanning SDK Reset
 }
 
 #pragma mark -------- Custom method ---------------
-//Set Scanning Data
+/**
+ * This method use set scanning data
+ *
+ */
 -(void)setData{
-    //check card type
+   //Set tableView Data
     if([_isFrom isEqualToString:@"2"]){
         for(int index = 0; index < 7 + [arrDocumentData count]; index++){
             NSDictionary *dic = [[NSDictionary alloc]init];
@@ -625,18 +623,13 @@ NSString* BackImgRotation = @"";
     return [dateFormatter stringFromDate:date];
 }
 
--(NSString *)dateToString:(NSString *)dateStr
-{
-    // Convert string to date object
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyMMdd"];
-    NSDate *date = [dateFormat dateFromString:dateStr];
-    [dateFormat setDateFormat:@"yy-MM-dd"];
-    return [dateFormat stringFromDate:date];
-    
-}
-
 #pragma mark -------- face match method ---------------
+/**
+ * This method use lunchZoom setup
+ * Make sure initialization was successful before launcing ZoOm
+ *
+ */
+
 - (void)launchZoomToVerifyLivenessAndRetrieveFacemap {
     
     // Make sure initialization was successful before launcing ZoOm
@@ -724,8 +717,7 @@ NSString* BackImgRotation = @"";
         // get the device partial liveness score
         float devicePartialLivenessScore = faceMetrics.devicePartialLivenessScore;
         double facem_score = 0.0;
-        ///facematch part
-        UIImage* faceImage2 = nil;
+       UIImage* faceImage2 = nil;
         if (faceMetrics.auditTrail != nil && [faceMetrics.auditTrail count] > 0)
             faceImage2 = faceMetrics.auditTrail[0];
         
@@ -787,7 +779,11 @@ NSString* BackImgRotation = @"";
     }
     [self handleResultFromFaceTecManagedRESTAPICall:result];
 }
-
+/**
+ * This method use to get liveness score
+ * Parameters to Pass: ZoomVerificationResult user scanning data
+ *
+ */
 -(void)handleResultFromFaceTecManagedRESTAPICall:(id<ZoomVerificationResult>)result
 {
     NSLog(@"%@",result.sessionId);
@@ -808,6 +804,7 @@ NSString* BackImgRotation = @"";
 }
 
 - (void)initializeZoom {
+    //Initialize the ZoOm SDK using your app token
     [Zoom.sdk initializeWithAppToken:MY_ZOOM_DEVELOPER_TOKEN completion: ^ void (BOOL validationResult) {
         if(validationResult) {
             NSLog(@"AppToken validated successfully");
@@ -875,6 +872,7 @@ NSString* BackImgRotation = @"";
         // Handle other error
     }
 }
+
 - (void)configureGradientBackground:(NSArray*)colors inLayer:(CALayer*)layer {
     CAGradientLayer* gradient = [[CAGradientLayer alloc] init];
     
@@ -886,7 +884,11 @@ NSString* BackImgRotation = @"";
     [layer addSublayer:gradient];
 }
 
-// Sets top margin of the ZoOm frame so that the frame is centered vertically on the device's display
+/**
+ * This method use set custom Frame lunchZoom
+ * Sets top margin of the ZoOm frame so that the frame is centered vertically on the device's display
+ */
+
 static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization) {
     
     CGFloat screenHeight = UIScreen.mainScreen.fixedCoordinateSpace.bounds.size.height;
@@ -914,7 +916,12 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
     }
 }
 
-// ----  Get Image for Imagepickerview -----
+/**
+ * This method use get captured view
+ * Parameters to Pass: UIView
+ *
+ * This method will return array of UIImageview
+ */
 - (NSMutableArray*)allImageViewsSubViews:(UIView *)view
 {
     NSMutableArray *arrImageViews=[NSMutableArray array];
@@ -1162,11 +1169,11 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
 
     if (photoImage != nil)
     {
-        [self launchZoomToVerifyLivenessAndRetrieveFacemap];
+        [self launchZoomToVerifyLivenessAndRetrieveFacemap]; //lunchZoom setup
     }
     else
     {
-        [self launchZoomToVerifyLivenessAndRetrieveFacemap];
+        [self launchZoomToVerifyLivenessAndRetrieveFacemap]; //lunchZoom setup
     }
 }
 
@@ -1233,7 +1240,6 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
     NSString *removeIndex;
     for(int index = 0; index <  [arrDocumentData count]; index++){
         NSDictionary * dict = (NSDictionary *)arrDocumentData[index] ;
-        //  NSString *forIndex = [NSString index];
         if (dict[KEY_TITLE] != nil){
             if ([dict valueForKey:KEY_TITLE] == removeKey){
                 removeIndex = [[NSNumber numberWithInt:index] stringValue];;

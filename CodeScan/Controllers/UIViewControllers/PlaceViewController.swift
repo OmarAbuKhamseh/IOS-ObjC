@@ -1,10 +1,6 @@
 //
 //  PlaceViewController.swift
-//  AccuraSDK
-//
-//  Created by SSD on 13/07/18.
-//  Copyright © 2018 Alexander Shishkov & Kirill Kornyakov. All rights reserved.
-//
+
 
 import UIKit
 

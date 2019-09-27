@@ -1,10 +1,5 @@
 //
 //  FirstTableViewCell.m
-//  Accura Scan
-//
-//  Created by iOS on 27/7/2019.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
 
 #import "FirstTableViewCell.h"
 

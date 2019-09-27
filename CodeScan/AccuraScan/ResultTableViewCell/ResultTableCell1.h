@@ -1,10 +1,5 @@
 //
 //  ResultTableCell1.h
-//  Accura Scan
-//
-//  Created by kuldeep on 8/31/19.
-//  Copyright © 2019 Elite Development LLC. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 

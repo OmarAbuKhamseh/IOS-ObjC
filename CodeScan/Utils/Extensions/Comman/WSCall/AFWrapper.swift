@@ -46,11 +46,7 @@ class AFWrapper: Alamofire.SessionManager
                     failure(error)
                 }
         }
-        
-    //        Alamofire.SessionManager.request(strURL, method: .post, parameters: params, encoding: URLEncoding(destination: .httpBody), headers: headers).responseJSON { (responseObject) -> Void in
-    //            
-    //            
-    //        }
+
         }
     
     // Delete method
@@ -76,7 +72,7 @@ class AFWrapper: Alamofire.SessionManager
             {
                 multipartFormData in
                 
-                if let imageData = image.image?.pngData()
+                if let imageData = image.image!.pngData()
                 {
                     multipartFormData.append(imageData, withName: "image", fileName: "image.png", mimeType: "image/png")
                 }
@@ -112,7 +108,7 @@ class AFWrapper: Alamofire.SessionManager
                  var count = 1
                 for img in image
                 {
-                    let imgdata = (img as? UIImage)?.pngData()
+                    let imgdata = (img as! UIImage).jpegData(compressionQuality: 1.0)
                     multipartFormData.append(imgdata!,withName: "documents[]", fileName: "documents\(count).jpg", mimeType: "image/jpeg")
                     count += 1
                 }

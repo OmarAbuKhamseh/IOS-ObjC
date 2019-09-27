@@ -1,10 +1,6 @@
 //
 //  ImageViewController.m
-//  AccuraSDK
-//
-//  Created by SSD on 13/07/18.
-//  Copyright © 2018 Alexander Shishkov & Kirill Kornyakov. All rights reserved.
-//
+
 
 #import "ImageViewController.h"
 #import "GlobalMethods.h"
@@ -17,9 +13,9 @@
 
 @interface ImageViewController ()<AVCapturePhotoCaptureDelegate>
 {
-   AVCaptureSession *session;
-   AVCapturePhotoOutput *stillImageOutput;
-   AVCaptureVideoPreviewLayer *videoPreviewLayer;
+    AVCaptureSession *session;
+    AVCapturePhotoOutput *stillImageOutput;
+    AVCaptureVideoPreviewLayer *videoPreviewLayer;
     UIImage *originalImage;
 }
 @end
@@ -32,18 +28,17 @@ UIImage* imgwithCroped;
 {
     [super viewDidLoad];
     [self ChangedOrintation];
-     [[NSNotificationCenter defaultCenter]addObserver:self selector: @selector(buttonClicked:) name:UIDeviceOrientationDidChangeNotification object:nil];
-     _isDismiss = true;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector: @selector(buttonClicked:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    _isDismiss = true;
 }
 
-/*
- This method use image rotated particular degrees
- Parameters to Pass: UIImage and croping degrees
- 
- This method will return crop UIImage
- and then explain the use of return value
- 
- */
+/**
+ * This method use image rotated particular degrees
+ * Parameters to Pass: UIImage and croping degrees
+ *
+ * This method will return crop UIImage
+ **/
+
 - (UIImage *)imageRotatedByDegrees:(UIImage*)oldImage deg:(CGFloat)degrees{
     // calculate the size of the rotated view's containing box for our drawing space
     UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,oldImage.size.width, oldImage.size.height)];
@@ -73,9 +68,9 @@ UIImage* imgwithCroped;
     [self ChangedOrintation]; //scanning frame orintation set
 }
 
-/*
- This method use scanning frame
- Device orientation acoding set scanning view frame
+/**
+ * This method use scanning frame
+ * Device orientation acoding set scanning view frame
  */
 -(void)ChangedOrintation {
     if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationLandscapeLeft)  )
@@ -108,7 +103,7 @@ UIImage* imgwithCroped;
         with = with * 0.65;
         __constant_width.constant = hite;
         __constant_heigtt.constant = with;
-      
+        
     }
     if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationPortrait)  )
     {
@@ -150,7 +145,7 @@ UIImage* imgwithCroped;
                                                                         error:&error];
     if (!error) {
         //Step 9
-       stillImageOutput = [AVCapturePhotoOutput new];
+        stillImageOutput = [AVCapturePhotoOutput new];
         if ([session canAddInput:input] && [session canAddOutput:stillImageOutput]) {
             
             [session addInput:input];
@@ -176,7 +171,7 @@ UIImage* imgwithCroped;
 
 - (void)setupLivePreview {
     //Setup camera view
-   videoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:session];
+    videoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:session];
     if (videoPreviewLayer) {//Chcek camera session is start
         
         videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspect; //VideoView set contentMode
@@ -214,12 +209,12 @@ UIImage* imgwithCroped;
         _FrameView.layer.borderWidth = 3.0f;
         
     }
-     _img.frame = _FrameView.frame;
+    _img.frame = _FrameView.frame;
     
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];\
+    [super didReceiveMemoryWarning];
 }
 
 - (IBAction)getInfoAction:(id)sender
@@ -277,16 +272,14 @@ UIImage* imgwithCroped;
 
 - (IBAction)cancelAction:(id)sender
 {
-        [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-/*
- This method use image crop particular size
- Parameters to Pass: UIImage and croping size
- 
- This method will return crop UIImage
- and then explain the use of return value
- 
+/**
+ * This method use image crop particular size
+ * Parameters to Pass: UIImage and croping size
+ *
+ * This method will return crop UIImage
  */
 - (UIImage *)croppIngimageByImageName:(UIImageView *)imageToCrop toRect:(CGRect)rect
 {
@@ -310,13 +303,11 @@ UIImage* imgwithCroped;
     return cropped;
 }
 
-/*
- This method use image Orientation particular angle
- Parameters to Pass: UIImage
- 
- This method will return  UIImage
- and then explain the use of return value
- 
+/**
+ * This method use image Orientation particular angle
+ * Parameters to Pass: UIImage
+ *
+ * This method will return  UIImage
  */
 -(UIImage *) fixedOrientation:(UIImage *) image {
     
@@ -388,6 +379,7 @@ UIImage* imgwithCroped;
     
     return [UIImage imageWithCGImage:cgImage];
 }
+
 - (IBAction)usePhotoAction:(id)sender
 {
     [SVProgressHUD showWithStatus:[NSString stringWithFormat:@"%@..",NSLocalizedString(@"Loading", @"")] maskType:SVProgressHUDMaskTypeBlack];
@@ -408,14 +400,12 @@ UIImage* imgwithCroped;
     }
 }
 
-/*
- This method use image crop particular size
- Parameters to Pass: UIImage and croping size
- 
- This method will return crop UIImage
- and then explain the use of return value
- 
- */
+/**
+ * This method use image resize particular size
+ * Parameters to Pass: UIImage and resize size
+ *
+ * This method will return resize UIImage
+ **/
 - (UIImage *)imageByCroppingImage:(UIImage* )image toSize:(CGSize)size
 {
     // not equivalent to image.size (which depends on the imageOrientation)!
@@ -445,19 +435,108 @@ UIImage* imgwithCroped;
     return cropped;
 }
 
-/*
- This method use image resize particular size
- Parameters to Pass: UIImage and resize size
- 
- This method will return resize UIImage
- and then explain the use of return value
- 
- */
+/**
+ * This method use image resize particular size
+ * Parameters to Pass: UIImage and resize size
+ *
+ * This method will return resize UIImage
+ **/
 - (UIImage *)imageWithResizeImage:(UIImage *)image convertToSize:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
     UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return destImage;
+}
+
+- (void)alertWithMsg:(NSString *)strMsg
+{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:APPNAME
+                                 message:strMsg
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"OK"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   //Handle your yes please button action here
+                                   [self.navigationController popViewControllerAnimated:YES];
+                               }];
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - WebResponse delegate
+
+-(void)setData:(NSString *)message items:(NSString *)items withtag:(int)tag
+{
+    
+    _isDismiss = false;
+    [SVProgressHUD dismiss];
+    switch (tag)
+    {
+        case sendImgTag:
+            if([message length] == 0)
+            {
+                if([items length] != 0)
+                {
+                    NSMutableDictionary *dicResponse = [items JSONValue];
+                    if ([[dicResponse valueForKey:@"status"]intValue] == 1)
+                    {
+                        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                        [SVProgressHUD dismiss];
+                        NSMutableArray *arr = [[NSMutableArray alloc]init];
+                        arr = [dicResponse valueForKey:@"data"];
+                        if (arr.count == 1)
+                        {
+                            NSMutableDictionary *data_dict = [[NSMutableDictionary alloc]init];
+                            data_dict = arr[0];
+                            NSString *card = [data_dict valueForKey:@"card"];
+                            NSRange rangeValue = [card rangeOfString:@"back" options:NSCaseInsensitiveSearch];
+                            if (rangeValue.length > 0)
+                            {
+                                appDelegate.dictStoreScanningData = arr[0];
+                                appDelegate.imgPanClick = originalImage;
+                                ShowResultVC *resultVC =(ShowResultVC *)[MainStoryBoard instantiateViewControllerWithIdentifier:@"ShowResultVC"];
+                                resultVC.isFrom = self->_isFrom;
+                                [self.navigationController pushViewController:resultVC animated:YES];
+                            }
+                            else
+                            {
+                                appDelegate.dictStoreScanningData = arr[0];
+                                appDelegate.imgPanClick = originalImage;
+                                ShowResultVC *resultVC =(ShowResultVC *)[MainStoryBoard instantiateViewControllerWithIdentifier:@"ShowResultVC"];
+                                resultVC.isFrom = self->_isFrom;
+                                [self.navigationController pushViewController:resultVC animated:YES];
+                            }
+                        }
+                        else
+                        {
+                            [self alertWithMsg:[dicResponse valueForKey:@"message"]];
+                        }
+                    }
+                    else
+                    {
+                        [SVProgressHUD dismiss];
+                        [self alertWithMsg:[dicResponse valueForKey:@"message"]];
+                    }
+                }
+                else
+                {
+                    [self performSelector:@selector(cancelAction:) withObject:nil afterDelay:1.0];
+                }
+            }
+            else
+            {
+                [self performSelector:@selector(cancelAction:) withObject:nil afterDelay:1.0];
+            }
+            break;
+        default:
+            break;
+    }
 }
 @end

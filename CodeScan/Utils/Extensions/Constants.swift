@@ -2,8 +2,7 @@
 //  Constants.swift
 //  CodeScan
 //
-//  Created by Stephen Muscarella on 5/27/18.
-//  Copyright © 2018 Elite Development LLC. All rights reserved.
+//  ******************** File use to declare constant variable in swift(for barcode scan) **********************
 //
 
 import Foundation

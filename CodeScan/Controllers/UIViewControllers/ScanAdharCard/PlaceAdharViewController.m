@@ -1,36 +1,23 @@
 //
 //  PlaceAdharViewController.m
-//  AccuraSDK
-//
-//  Created by SSD on 14/07/18.
-//  Copyright © 2018 Alexander Shishkov & Kirill Kornyakov. All rights reserved.
-//
+
 
 #import "PlaceAdharViewController.h"
-#import "ModelManager.h"
 #import "WebServiceUrl.h"
-#import <MessageUI/MessageUI.h>
-#import "NDHTMLtoPDF.h"
-//#import "MenuViewController.h"
 #include "LibXL/libxl.h"
 
 #import "ImageViewController.h"
-@interface PlaceAdharViewController ()<UIActionSheetDelegate,NDHTMLtoPDFDelegate,MFMailComposeViewControllerDelegate>
+@interface PlaceAdharViewController ()<UIActionSheetDelegate>
 {
-    BOOL isPdf;
-    NSMutableArray *dataArr,*scanInfoArray;
-    ModelManager *mgrObj;
-    
     
 }
+
 @end
 
 @implementation PlaceAdharViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    mgrObj=[ModelManager getInstance];
-
 }
 
 - (void)didReceiveMemoryWarning

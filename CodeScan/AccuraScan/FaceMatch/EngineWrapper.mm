@@ -1,10 +1,6 @@
 //
 //  EngineWrapper.m
-//  FaceMatch
-//
-//  Created by Caroll on 2/24/17.
-//  Copyright © 2017 Caroll. All rights reserved.
-//
+
 
 #import "EngineWrapper.h"
 #import "ImageHelper.h"
@@ -30,7 +26,6 @@ int g_nEngineInit = -100;
     
     SResult ret = InitEngine([dataFilePath1 UTF8String], [dataFilePath2 UTF8String], [licensePath UTF8String]);
     
-//    SResult ret = InitEngine("", "");
     g_nEngineInit = ret;
 }
 
@@ -52,7 +47,6 @@ int g_nEngineInit = -100;
     int   len2 = [pbuff2 length];
     
     float score = 0.0;
-//    if (len1 == len2 && len1 == 1316) {
     if (len1 == 0 || len2 == 0 || feature1 == nil || feature2 == nil)
         return 0.0f;
     
@@ -61,13 +55,11 @@ int g_nEngineInit = -100;
         {
             return 0.0;
         }
-//    }
     return score;
 }
 
 +(NSFaceRegion*) DetectSourceFaces:(UIImage*) image
 {
-    
     if ([self IsEngineInit] == NO)
         return nil;
     
@@ -93,20 +85,19 @@ int g_nEngineInit = -100;
             SWRect rect = pFaces.Rectangle;
             CGFloat fx = (CGFloat)rect.X;
             CGFloat fy = (CGFloat)rect.Y;
-                
+            
             CGFloat fw = (CGFloat)rect.Width;
             CGFloat fh = (CGFloat)rect.Height;
-                
+            
             region.bound = CGRectMake(fx, fy, fw, fh);   //actuall
             region.confidence = pFaces.Confidence;
             region.face = 1;
             
             region.feature = [NSData dataWithBytes:pFaces.featureData length:pFaces.nFeatureSize*sizeof(float)];
-                
+            
         }
     }
     region.image = [ImageHelper imageWithBits:pFaces.pNewImg withSize:CGSizeMake(pFaces.dwNewWidth, pFaces.dwNewHeight)];
-//    region.image = image;
     free(inbits);
     return region;
 }
@@ -153,7 +144,6 @@ int g_nEngineInit = -100;
         }
     }
     region.image = [ImageHelper imageWithBits:pFaces.pNewImg withSize:CGSizeMake(pFaces.dwNewWidth, pFaces.dwNewHeight)];
-//    region.image = image;
     free(inbits);
     return region;
 }

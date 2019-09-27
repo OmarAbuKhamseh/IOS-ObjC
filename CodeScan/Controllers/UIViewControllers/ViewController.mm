@@ -1,42 +1,27 @@
 /*****************************************************************************
  *   ViewController.m
- ******************************************************************************
- *   by Kirill Kornyakov and Alexander Shishkov, 13th May 2013
- ******************************************************************************
- *   Chapter 10 of the "OpenCV for iOS" book
- *
- *   Capturing Video from Camera shows how to capture video
- *   stream from camera.
- *
- *   Copyright Packt Publishing 2013.
- *   http://bit.ly/OpenCV_for_iOS_book
- *****************************************************************************/
+ ******************************************************************************/
+
 
 #import "zinterface.h"
 #import "ViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "ModelManager.h"
 #import "WebServiceUrl.h"
 #import <AVFoundation/AVFoundation.h>
-#import <MessageUI/MessageUI.h>
-#import "NDHTMLtoPDF.h"
 #include "LibXL/libxl.h"
 #import "WebAPIRequest.h"
 #include <opencv2/imgproc/imgproc.hpp>
 #import "PlaceHolderViewController.h"
 #import "GlobalMethods.h"
 
-@interface ViewController ()<UIActionSheetDelegate,NDHTMLtoPDFDelegate,MFMailComposeViewControllerDelegate>
+@interface ViewController ()<UIActionSheetDelegate>
 {
-    BOOL isPdf;
-    NSMutableArray *dataArr,*scanInfoArray;
-    ModelManager *mgrObj;
 }
 @end
 
 @implementation ViewController
 
-@synthesize _imageView,_videoCamera,_viewLayer, _constant_heigtt, _constant_width , _constant_Headerheigtt;
+@synthesize _imageView,_videoCamera,_viewLayer, _constant_heigtt, _constant_width ;
 
 NSLock *lock = [[NSLock alloc]init];
 int retval = 0;
@@ -107,7 +92,8 @@ CGFloat scanningOriginX = 0.0;
     _constant_width.constant = with;
     viewScanningLayerWidth = with;
     viewScanningLayerHeight = hite;
-    
+   
+    //Check camera Permission
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     _viewLayer.layer.borderColor = [UIColor redColor].CGColor;
     _viewLayer.layer.borderWidth = 3.0f;
@@ -115,7 +101,6 @@ CGFloat scanningOriginX = 0.0;
     [self._imgFlipView setHidden:true];
     
     if(status == AVAuthorizationStatusAuthorized) {
-        self->mgrObj=[ModelManager getInstance];
         
         self._videoCamera = [[CvVideoCamera alloc] init];
         self._videoCamera.delegate = self;
@@ -168,16 +153,15 @@ CGFloat scanningOriginX = 0.0;
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
             if(granted){
                 NSLog(@"Granted access");
-                self->mgrObj=[ModelManager getInstance];
                 
                 self._videoCamera = [[CvVideoCamera alloc] init];
                 self._videoCamera.delegate = self;
                 self._videoCamera.defaultAVCaptureDevicePosition =
-                AVCaptureDevicePositionBack;
+                AVCaptureDevicePositionBack; //Camera position
                 self._videoCamera.defaultAVCaptureSessionPreset =
-                AVCaptureSessionPreset1280x720;
+                AVCaptureSessionPreset1280x720; //Camera view size
                 self._videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-                self._videoCamera.defaultFPS = 30;
+                self._videoCamera.defaultFPS = 30; //Camera orientation
                 self._videoCamera.grayscaleMode = NO;
                 if(loadDiction() == 0)
                 {
@@ -283,17 +267,17 @@ CGFloat scanningOriginX = 0.0;
 }
 
 -(void) buttonClicked:(UIButton*)sender {
-    [self ChangedOrintation];
+    [self ChangedOrintation]; //Set Scanning Orintation
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [_videoCamera start];
+    [_videoCamera start];  //Start Scanning
     _isCapturing = YES;
 }
 - (void) viewWillDisappear:(BOOL)animated
 {
-    [_videoCamera stop];
+    [_videoCamera stop]; //Stop Scanning
     _imageView.image = nil;
     _isCapturing = NO;
     _matOrg.release();
@@ -305,8 +289,6 @@ CGFloat scanningOriginX = 0.0;
  Parameters to Pass: scanning image CV::Mat metrix
  
  This method will return UIImage
- and then explain the use of return value
- 
  */
 
 UIImage* uiimageFromCVMat(cv::Mat &cvMat)
@@ -357,9 +339,8 @@ UIImage* uiimageFromCVMat(cv::Mat &cvMat)
  Parameters to Pass: scanning image
  
  This method will return CV::Mat metrix
- and then explain the use of return value
- 
  */
+
 cv::Mat cvMatFromUIImage(UIImage* image)
 {
     if (image == nil) {
@@ -644,7 +625,7 @@ NSString *previouslines = @"";
 }
 
 
-- (void) flipAnimation
+- (void) flipAnimation //This function is called onr slide scan complete
 {
     [self._imgFlipView setHidden:false];
     [UIView animateWithDuration:1.5 animations:^{
@@ -656,7 +637,9 @@ NSString *previouslines = @"";
         [self._imgFlipView setHidden:true];
     }];
 }
-
+/*
+ * This method call document scan success
+ */
 - (void) Recog_Successed
 {
     NSLog(@"Recog successed");
@@ -781,7 +764,7 @@ NSString *previouslines = @"";
         recType = REC_INIT;
         success = false;
         bMrzFirst = false;
-        [_videoCamera stop];
+        [_videoCamera stop]; //Stop Scanning
         _isCapturing = NO;
         _imageView.image = nil;
         _matOrg.release();
@@ -796,7 +779,7 @@ NSString *previouslines = @"";
 {
     if (_isCapturing)
     {
-        [_videoCamera stop];
+        [_videoCamera stop]; //Stop Scanning
         _isCapturing = NO;
     }
     for (UIViewController *controller in self.navigationController.viewControllers) {
@@ -814,7 +797,7 @@ NSString *previouslines = @"";
 {
     if (_isCapturing)
     {
-        [_videoCamera stop];
+        [_videoCamera stop];  //Stop Scanning
         _isCapturing = NO;
     }
     for (UIViewController *controller in self.navigationController.viewControllers) {
@@ -826,75 +809,6 @@ NSString *previouslines = @"";
             break;
         }
     }
-}
-
-/*
- This method use image crop particular size
- Parameters to Pass: UIImage and croping size
- 
- This method will return crop UIImage
- and then explain the use of return value
- 
- */
-- (UIImage *)imageByCroppingImage:(UIImage* )image toSize:(CGSize)size
-{
-    // not equivalent to image.size (which depends on the imageOrientation)!
-    
-    double width = (size.width * 2);
-    double hidth = (size.height * 2);
-    double fullWidth = image.size.width;
-    double getX = fullWidth - width;
-    
-    double fullHeigtht = image.size.height;
-    double getY = fullHeigtht / 2;
-    getY = hidth / 4;
-    
-    
-    if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationPortrait)  ) {
-        double with = fullWidth * 0.95;
-        double hite = fullHeigtht * 0.35;
-        
-        width = with ;
-        hidth = hite;
-        getX = fullWidth - with;
-        getY = (fullHeigtht / 2);
-        getY = getY - (hite / 2);
-    }else if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationLandscapeRight)  ) {
-        double with = fullWidth * 0.85;
-        double hite = fullHeigtht * 0.80;
-        
-        width = with ;
-        hidth = hite;
-        hidth = hidth;
-        getX = fullWidth - with;
-        getY = fullHeigtht / 2;
-        getY = getY - (hite / 2);
-    }else if ( ([[UIDevice currentDevice] orientation] ==  UIDeviceOrientationLandscapeLeft)  ) {
-        double with = fullWidth * 0.85;
-        double hite = fullHeigtht * 0.80;
-        
-        width = with ;
-        hidth = hite;
-        getX = fullWidth - with;
-        getY = fullHeigtht / 2;
-        getY = getY - (hite / 2);
-        hidth = hidth;
-    }else{
-        double with = fullWidth * 0.95;
-        double hite = fullHeigtht * 0.35;
-        
-        width = with ;
-        hidth = hite;
-        getX = fullWidth - with;
-        getY = (fullHeigtht / 2);
-        getY = getY - (hite / 2);
-    }
-    
-    CGRect cropRect = CGRectMake((getX/2), getY - 40 , width, hidth);
-    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage],  cropRect);
-    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
-    return cropped;
 }
 
 /*
