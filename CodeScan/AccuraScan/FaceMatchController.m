@@ -37,7 +37,10 @@ UIImagePickerController* picker;
     selIndex = 0;
     [[self lblScore] setText:@"Match Score : 0 %"];
     
-    //Check enginewrapper engine is init
+    /*
+     SDK method call to engineWrapper init
+     @Return: init status bool value
+     */
     bool bInit = [EngineWrapper IsEngineInit];
     if (!bInit)
         [EngineWrapper FaceEngineInit]; //Declaration EngineWrapper
@@ -49,8 +52,11 @@ UIImagePickerController* picker;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    int nRet = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status value
+    /*
+     SDK method call to get engineWrapper load status
+     @Return: init status Int value
+     */
+    int nRet = [EngineWrapper GetEngineInitValue];
     if (nRet == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (nRet == -15)
@@ -66,8 +72,10 @@ UIImagePickerController* picker;
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    
-    [EngineWrapper FaceEngineClose]; // enginewrapper engine deinit
+    /*
+     SDK method call to engine deinit
+     */
+    [EngineWrapper FaceEngineClose];
     
 }
 
@@ -186,16 +194,27 @@ UIImagePickerController* picker;
     
     NSFaceRegion* faceRegion;
     if (selIndex == 1)
-    //EngineWrapper in pass UIImage
-    //retun face Image
+    /*
+     FaceMatch SDK method call to Identify face in Document scanning image
+     @Params: BackImage, Front Face Image
+     @Return: Face data
+     */
     faceRegion = [EngineWrapper DetectSourceFaces:image];
     else {
         NSFaceRegion* face1 = [[self srcFView] getFaceRegion]; //Find UIImage in face
-        if (face1 == nil) { //Check face is exist or not
+        if (face1 == nil) {
+            /*
+             FaceMatch SDK method call to Identify face in Document scanning image
+             @Params: BackImage, Front Face Image
+             @Return: Face data
+             */
             faceRegion = [EngineWrapper DetectSourceFaces:image];
         } else {
-            // EngineWrapper DetectTargetFaces method in pass two images
-            //method return value is face match score
+            /*
+             FaceMatch SDK method call to detect Face in back image
+             @Params: BackImage, Front Face Image faceRegion
+             @Return: Face Image Frame
+             */
             faceRegion = [EngineWrapper DetectTargetFaces:image feature1:face1.feature];
         }
     }
@@ -203,8 +222,16 @@ UIImagePickerController* picker;
     if (selIndex == 1) {
         if (faceRegion != nil){
             [self.imgSource setHidden:true];
-            [[self srcFView] setFaceRegion:faceRegion]; //Draw square face around
-            [[self srcFView] setImage:faceRegion.image]; //Set document image
+            /*
+             SDK method call to draw square face around
+             @Params: BackImage, Front Image faceRegion Data
+             */
+            [[self srcFView] setFaceRegion:faceRegion];
+            /*
+             SDK method call to draw square face around
+             @Params: BackImage, Front faceRegion Image
+             */
+            [[self srcFView] setImage:faceRegion.image];
             [[self srcFView] setNeedsDisplay];
 
         }
@@ -214,15 +241,31 @@ UIImagePickerController* picker;
             NSFaceRegion* face1 = [[self srcFView] getFaceRegion]; // Get image data
             NSFaceRegion* faceRegion2;
             if (face1 == nil) {
-                faceRegion2 = [EngineWrapper DetectSourceFaces:face2.image]; //Find UIImage in face
+                /*
+                 FaceMatch SDK method call to Identify face in Document scanning image
+                 @Params: BackImage, Front Face Image
+                 @Return: Face data
+                 */
+                faceRegion2 = [EngineWrapper DetectSourceFaces:face2.image];
             } else {
-                // EngineWrapper DetectTargetFaces method in pass two images
-                //method return value is face faceRegion
+                /*
+                 FaceMatch SDK method call to detect Face in back image
+                 @Params: BackImage, Front Face Image faceRegion
+                 @Return: Face Image Frame
+                 */
                 faceRegion2 = [EngineWrapper DetectTargetFaces:face2.image feature1:face1.feature];
             }
             if (faceRegion2 != nil){
-                [[self tgtFView] setFaceRegion:faceRegion2]; //Draw square face around
-                [[self tgtFView] setImage:faceRegion2.image]; //Set document image
+                /*
+                 SDK method call to draw square face around
+                 @Params: BackImage, Front Image faceRegion Data
+                 */
+                [[self tgtFView] setFaceRegion:faceRegion2];
+                /*
+                 SDK method call to draw square face around
+                 @Params: BackImage, Front faceRegion Image
+                 */
+                [[self tgtFView] setImage:faceRegion2.image];
                 [[self tgtFView] setNeedsDisplay];
             }
         }
@@ -231,8 +274,16 @@ UIImagePickerController* picker;
             [self.imgTarget setHidden:true];
             [self.lblUpload setHidden:true];
             [self.imgUpload setHidden:true];
-            [[self tgtFView] setFaceRegion:faceRegion]; //Draw square face around
-            [[self tgtFView] setImage:faceRegion.image]; //Set document image
+            /*
+             SDK method call to draw square face around
+             @Params: BackImage, Front Image faceRegion Data
+             */
+            [[self tgtFView] setFaceRegion:faceRegion];
+            /*
+             SDK method call to draw square face around
+             @Params: BackImage, Front faceRegion Image
+             */
+            [[self tgtFView] setImage:faceRegion.image];
             [[self tgtFView] setNeedsDisplay];
         }
 
@@ -246,8 +297,11 @@ UIImagePickerController* picker;
         return;
     }
     
-    // EngineWrapper DetectTargetFaces method in pass two FaceRegion
-    //method return value is face match score
+    /*
+     SDK method call to get FaceMatch Score
+     @Params: FrontImage Face, BackImage Face
+     @Return: Match Score
+     */
     double score = [EngineWrapper Identify:face1.feature featurebuff2:face2.feature];
     double finalScore = score * 100;
     NSString* strScore = [NSString stringWithFormat:@"Match Score : %0.2f %%", finalScore];

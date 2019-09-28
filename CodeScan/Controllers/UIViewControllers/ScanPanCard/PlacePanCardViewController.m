@@ -4,7 +4,7 @@
 #import "PlacePanCardViewController.h"
 #import "WebServiceUrl.h"
 #import <MessageUI/MessageUI.h>
-#include "LibXL/libxl.h"
+
 
 #import "ImageViewController.h"
 @interface PlacePanCardViewController ()<UIActionSheetDelegate>

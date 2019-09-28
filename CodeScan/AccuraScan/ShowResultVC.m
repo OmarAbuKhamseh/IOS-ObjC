@@ -93,18 +93,21 @@ NSString* BackImgRotation = @"";
     isFirst= true;
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    bool fmInit = [EngineWrapper IsEngineInit];  //Check engineWrapper init or not init
+   
+    /*
+     SDK method call to engineWrapper init
+     @Return: init status bool value
+     */
+    bool fmInit = [EngineWrapper IsEngineInit];
     if (!fmInit)
         [EngineWrapper FaceEngineInit]; // init enginewrapper
   
-    /**
-    //Check enginewrapper init Value
-    //status list
-    //-20 value is key not found
-    //-15 License Invalid
-    */
-    int fmValue = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status
+    /*
+     SDK method call to get engineWrapper load status
+     @Return: init status Int value
+     */
+    
+    int fmValue = [EngineWrapper GetEngineInitValue];
     if (fmValue == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (fmValue == -15)
@@ -144,7 +147,12 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
+                /*
+                 FaceMatch SDK method call to Identify face in Document scanning image
+                 @Params: BackImage, Front Face Image
+                 @Return: Face data
+                 */
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
             }
             [_tblView reloadData];
         }
@@ -177,7 +185,12 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
+                /*
+                 FaceMatch SDK method call to Identify face in Document scanning image
+                 @Params: BackImage, Front Face Image
+                 @Return: Face data
+                 */
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
             }
              [_tblView reloadData];
         }
@@ -266,7 +279,12 @@ NSString* BackImgRotation = @"";
         faceRegion = nil;
         //Check ImageData is exist or not
         if(photoImage != nil){
-            faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
+            /*
+             FaceMatch SDK method call to Identify face in Document scanning image
+             @Params: BackImage, Front Face Image
+             @Return: Face data
+             */
+            faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
         }
         NSData *image_documentFontImage = [dictScanningData valueForKey:@"docfrontImage"];
         if (image_documentFontImage != nil){
@@ -740,10 +758,17 @@ NSString* BackImgRotation = @"";
             CGFloat ratio = (CGFloat)matchImage.size.width/matchImage.size.height;
             matchImage = [self imageWithImage:matchImage convertToSize:CGSizeMake(480*ratio, 480)];
             if (faceRegion != nil){
-                // EngineWrapper DetectTargetFaces method in pass two images
-                //First image is capture and second image is document face image
-                //method return value is face match score
+                /*
+                 FaceMatch SDK method call to detect Face in back image
+                 @Params: BackImage, Front Face Image faceRegion
+                 @Return: Face Image Frame
+                 */
                 NSFaceRegion* face2 = [EngineWrapper DetectTargetFaces:matchImage feature1:faceRegion.feature];
+                /*
+                 SDK method call to get FaceMatch Score
+                 @Params: FrontImage Face, BackImage Face
+                 @Return: Match Score
+                 */
                 facem_score = [EngineWrapper Identify:faceRegion.feature featurebuff2:face2.feature];
             }
         }
@@ -786,9 +811,6 @@ NSString* BackImgRotation = @"";
  */
 -(void)handleResultFromFaceTecManagedRESTAPICall:(id<ZoomVerificationResult>)result
 {
-    NSLog(@"%@",result.sessionId);
-    NSLog(@"%ld",(long)result.status);
-    NSLog(@"%@",result.faceMetrics);
     if(result.faceMetrics != nil)
     {
         NSData *zoomFacemap = result.faceMetrics.zoomFacemap;
@@ -969,11 +991,18 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
             CGSize scaledSize = CGSizeMake(image.size.width * 600/image.size.height, 600);
             matchImage = [GlobalMethods imageWithImage:image scaledToSize:scaledSize]; //Convert Image particular size
             
-            if (faceRegion != nil){ // Check faceRegion empty or not
-                // EngineWrapper DetectTargetFaces method in pass two images
-                //First image is capture and second image is document face image
-                //method return value is face match score
+            if (faceRegion != nil){
+                /*
+                 FaceMatch SDK method call to detect Face in back image
+                 @Params: BackImage, Front Face Image faceRegion
+                 @Return: Face Image Frame
+                 */
                 NSFaceRegion* face2 = [EngineWrapper DetectTargetFaces:matchImage feature1:faceRegion.feature];
+                /*
+                 SDK method call to get FaceMatch Score
+                 @Params: FrontImage Face, BackImage Face
+                 @Return: Match Score
+                 */
                 facem_score = [EngineWrapper Identify:faceRegion.feature featurebuff2:face2.feature];
                 matchImage = face2.image;
             }
@@ -1216,12 +1245,6 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
             }else{
                 [arrDocumentData insertObject:dic atIndex:2];
             }
-            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-                //Background Thread
-                dispatch_async(dispatch_get_main_queue(), ^(void){
-                   
-                });
-        });
             [_tblView reloadData];
             NSIndexPath* ip = [NSIndexPath indexPathForRow:0 inSection:0];
             [_tblView scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionTop animated:YES];

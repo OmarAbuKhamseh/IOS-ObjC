@@ -8,7 +8,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "WebServiceUrl.h"
 #import <AVFoundation/AVFoundation.h>
-#include "LibXL/libxl.h"
 #import "WebAPIRequest.h"
 #include <opencv2/imgproc/imgproc.hpp>
 #import "PlaceHolderViewController.h"
