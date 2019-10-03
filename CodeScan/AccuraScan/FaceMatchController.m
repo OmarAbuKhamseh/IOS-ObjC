@@ -118,30 +118,25 @@ UIImagePickerController* picker;
 
 //MARK:- ImagePicker delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-        [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage* image ;
     NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-        UIImage* picture = [info objectForKey:UIImagePickerControllerOriginalImage];
-        image = picture;
-        // **You can now do something with the picture.
- 
-    if(picker.sourceType == UIImagePickerControllerSourceTypeCamera && picker.cameraDevice == UIImagePickerControllerCameraDeviceFront){
-        UIImage * flippedImage = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationLeftMirrored];
-        image = flippedImage; //capture image filp leftmirrored
-    }
+    UIImage* picture = [info objectForKey:UIImagePickerControllerOriginalImage];
+    image = picture;
+    // **You can now do something with the picture.
     
     CGSize scaledSize = CGSizeMake(image.size.width * 600/image.size.height, 600); //Convert Image particular
     image = [GlobalMethods imageWithImage:image scaledToSize:scaledSize];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
-     [SVProgressHUD showWithStatus:[NSString stringWithFormat:@"%@..",NSLocalizedString(@"Loading", @"")] maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:[NSString stringWithFormat:@"%@..",NSLocalizedString(@"Loading", @"")] maskType:SVProgressHUDMaskTypeBlack];
     double delayInSeconds = 0.01;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self match:image];
     });
-   
+    
 }
 
 /**
@@ -353,7 +348,7 @@ UIImagePickerController* picker;
     picker.delegate = self;
     picker.editing = NO;
     picker.sourceType =  UIImagePickerControllerSourceTypeCamera;
-
+    picker.modalPresentationStyle = UIModalPresentationCurrentContext;
     [self presentViewController:picker animated:YES completion:nil];
     
 }
@@ -370,7 +365,7 @@ UIImagePickerController* picker;
     picker.delegate = self;
     picker.editing = NO;
     picker.sourceType =  UIImagePickerControllerSourceTypeCamera;
-
+    picker.modalPresentationStyle = UIModalPresentationCurrentContext;
     [self presentViewController:picker animated:YES completion:nil];
 }
 

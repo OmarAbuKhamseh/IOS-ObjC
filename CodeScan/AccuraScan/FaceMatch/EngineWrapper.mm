@@ -97,7 +97,7 @@ int g_nEngineInit = -100;
             
         }
     }
-    region.image = [ImageHelper imageWithBits:pFaces.pNewImg withSize:CGSizeMake(pFaces.dwNewWidth, pFaces.dwNewHeight)];
+    region.image = image;
     free(inbits);
     return region;
 }
@@ -143,7 +143,7 @@ int g_nEngineInit = -100;
             
         }
     }
-    region.image = [ImageHelper imageWithBits:pFaces.pNewImg withSize:CGSizeMake(pFaces.dwNewWidth, pFaces.dwNewHeight)];
+    region.image = image;
     free(inbits);
     return region;
 }
