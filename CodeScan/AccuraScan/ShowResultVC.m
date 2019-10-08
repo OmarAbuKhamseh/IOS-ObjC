@@ -95,19 +95,22 @@ NSString* BackImgRotation = @"";
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
    
     /*
-     SDK method call to engineWrapper init
-     @Return: init status bool value
+     FaceMatch SDK method to check if engine is initiated or not
+     Return: true or false
      */
     bool fmInit = [EngineWrapper IsEngineInit];
     if (!fmInit)
-        [EngineWrapper FaceEngineInit]; // init enginewrapper
+    /*
+     FaceMatch SDK method initiate SDK engine
+     */
+        [EngineWrapper FaceEngineInit]; //Declaration EngineWrapper
   
     /*
-     SDK method call to get engineWrapper load status
-     @Return: init status Int value
+     Facematch SDK method to get SDK engine status after initialization
+     Return: -20 = Face Match license key not found, -15 = Face Match license is invalid.
      */
     
-    int fmValue = [EngineWrapper GetEngineInitValue];
+    int fmValue = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status
     if (fmValue == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (fmValue == -15)
@@ -123,7 +126,10 @@ NSString* BackImgRotation = @"";
         _btnFaceMathch.hidden = NO;
         _btnLiveness.hidden = NO;
         
-        [self initializeZoom]; //Set Zoom Controller
+        /*
+         Initialize Zoom SDK and set Controller
+         */
+        [self initializeZoom];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadPhotoCaptured) name:@"_UIImagePickerControllerUserDidCaptureItem" object:nil];
@@ -147,12 +153,7 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                /*
-                 FaceMatch SDK method call to Identify face in Document scanning image
-                 @Params: BackImage, Front Face Image
-                 @Return: Face data
-                 */
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
             }
             [_tblView reloadData];
         }
@@ -185,12 +186,7 @@ NSString* BackImgRotation = @"";
             photoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dictScanningData valueForKey:@"scan_image"]]]];
             faceRegion = nil;
             if(photoImage != nil){
-                /*
-                 FaceMatch SDK method call to Identify face in Document scanning image
-                 @Params: BackImage, Front Face Image
-                 @Return: Face data
-                 */
-                faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+                faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
             }
              [_tblView reloadData];
         }
@@ -279,12 +275,7 @@ NSString* BackImgRotation = @"";
         faceRegion = nil;
         //Check ImageData is exist or not
         if(photoImage != nil){
-            /*
-             FaceMatch SDK method call to Identify face in Document scanning image
-             @Params: BackImage, Front Face Image
-             @Return: Face data
-             */
-            faceRegion = [EngineWrapper DetectSourceFaces:photoImage];
+            faceRegion = [EngineWrapper DetectSourceFaces:photoImage]; //Identify face in Document scanning image
         }
         NSData *image_documentFontImage = [dictScanningData valueForKey:@"docfrontImage"];
         if (image_documentFontImage != nil){
@@ -643,7 +634,7 @@ NSString* BackImgRotation = @"";
 
 #pragma mark -------- face match method ---------------
 /**
- * This method use lunchZoom setup
+ * This method use lunch Zoom setup
  * Make sure initialization was successful before launcing ZoOm
  *
  */
@@ -765,7 +756,7 @@ NSString* BackImgRotation = @"";
                  */
                 NSFaceRegion* face2 = [EngineWrapper DetectTargetFaces:matchImage feature1:faceRegion.feature];
                 /*
-                 SDK method call to get FaceMatch Score
+                 FaceMatch SDK method call to get FaceMatch Score
                  @Params: FrontImage Face, BackImage Face
                  @Return: Match Score
                  */
@@ -939,10 +930,9 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
 }
 
 /**
- * This method use get captured view
- * Parameters to Pass: UIView
- *
- * This method will return array of UIImageview
+ * This method is used to get captured view
+ * Param: UIView
+ * Return: array of UIImageview
  */
 - (NSMutableArray*)allImageViewsSubViews:(UIView *)view
 {
@@ -993,15 +983,15 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
             
             if (faceRegion != nil){
                 /*
-                 FaceMatch SDK method call to detect Face in back image
-                 @Params: BackImage, Front Face Image faceRegion
-                 @Return: Face Image Frame
+                 Accura Face SDK method to detect user face from selfie or camera stream
+                 Params: User photo, user face found in document scanning
+                 Return: User face from user photo
                  */
-                NSFaceRegion* face2 = [EngineWrapper DetectTargetFaces:matchImage feature1:faceRegion.feature];
+                NSFaceRegion* face2 = [EngineWrapper DetectTargetFaces:matchImage feature1:faceRegion.feature]; //identify face in back image which found in front image
                 /*
-                 SDK method call to get FaceMatch Score
-                 @Params: FrontImage Face, BackImage Face
-                 @Return: Match Score
+                 Accura Face SDK method to get face match score
+                 Params: face image from document with user image from selfie or camera stream
+                 Returns: face match score
                  */
                 facem_score = [EngineWrapper Identify:faceRegion.feature featurebuff2:face2.feature];
                 matchImage = face2.image;
@@ -1025,7 +1015,7 @@ static void centerZoomFrameCustomization(ZoomCustomization *currentCustomization
                 [self removeOldValue:@"LIVENESS SCORE : "];
                 self->_btnFaceMathch.hidden = YES;
                 [self removeOldValue:@"FACEMATCH SCORE : "];
-                NSString *twoDecimalPlaces = [NSString stringWithFormat:@"%0.02f %%", facem_score * 100];
+                NSString *twoDecimalPlaces = [NSString stringWithFormat:@"%0.02f %%", facem_score * 100]; //Face match score convert to float value
                 NSDictionary *dic = @{ KEY_VALUE : twoDecimalPlaces ,KEY_TITLE:@"FACEMATCH SCORE : "};
                 if([self->_isFrom isEqualToString:@"2"] || [self->_isFrom isEqualToString:@"3"]){
                     [arrDocumentData insertObject:dic atIndex:1];

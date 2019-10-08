@@ -184,8 +184,8 @@ CGFloat scanningOriginX = 0.0;
 }
 
 /*
-     This method use scanning frame
-     Device orientation acoding set scanning view frame
+ This method calls frame for scanning MRZ documents.
+ Device orientation according and sets scanning view frame
  */
 
 -(void)ChangedOrintation {
@@ -284,9 +284,8 @@ CGFloat scanningOriginX = 0.0;
 }
 
 /*
- Call to Opencv framework method
+ Call to OpenCV framework method
  Parameters to Pass: scanning image CV::Mat metrix
- 
  This method will return UIImage
  */
 
@@ -334,10 +333,9 @@ UIImage* uiimageFromCVMat(cv::Mat &cvMat)
 }
 
 /*
- Call to Opencv framework method
- Parameters to Pass: scanning image
- 
- This method will return CV::Mat metrix
+ Call to OpenCV framework method
+ Param: scanning image
+ Return:Mat metrix
  */
 
 cv::Mat cvMatFromUIImage(UIImage* image)
@@ -388,7 +386,7 @@ cv::Mat cvMatFromUIImage(UIImage* image)
 
 /*
  Delegate method for processing image frames
- Parameters to Pass: scanning cv::Mat metrix
+ Param: scanning cv::Mat metrix
  */
 
 - (void)processImage:(cv::Mat&)image //This function is called per every frame
@@ -479,6 +477,7 @@ NSString *previouslines = @"";
         int phoW = 0, phoH = 0;
         
         bool bPickPhoto = YES;
+        // License file path
         NSString* path = [[NSBundle mainBundle] pathForResource:@"key" ofType:@"license"];
         if ([path isEqualToString:@""] || path == nil)
         {
@@ -487,12 +486,19 @@ NSString *previouslines = @"";
         }
         // check the rectype
         if (recType ==  REC_INIT){
+            
+            /*
+             SDK Method to do MRZ Scan
+             */
             retval = doRecogGrayImg_Passport(splits[2].data, splits[1].data, splits[0].data, w, h, chlines, success, chtype, chcountry, chsurname, chgivenname, chpassportnumber, chpassportchecksum, chnationality, chbirth, chbirthchecksum,chsex, chexpirationdate, chexpirationchecksum, chpersonalnumber, chpersonalnumberchecksum, chsecondrowchecksum,chplaceofbirth,chplaceofissue, photoChannels[0], photoChannels[1], photoChannels[2],&phoW, &phoH, bPickPhoto,(char*)[path UTF8String]);
             
             if (success == false && reccnt > 2)
             {
                 if (retface < 1)
                 {
+                    /*
+                     Detect face after MRZ scan
+                     */
                     retface = doFaceDetect(splits[2].data, splits[1].data, splits[0].data, w, h, photoChannels[0], photoChannels[1], photoChannels[2], &phoW, &phoH);
                 }
             }
@@ -507,6 +513,7 @@ NSString *previouslines = @"";
         {
             success = false;
             if (reccnt > 2)
+                // Detect user face on scanned image
                 retface = doFaceDetect(splits[2].data, splits[1].data, splits[0].data, w, h, photoChannels[0], photoChannels[1], photoChannels[2], &phoW, &phoH);
             
             reccnt++;
@@ -637,7 +644,7 @@ NSString *previouslines = @"";
     }];
 }
 /*
- * This method call document scan success
+ * Method called after MRZ scanned successfull
  */
 - (void) Recog_Successed
 {
@@ -645,6 +652,7 @@ NSString *previouslines = @"";
     //check the rectype
     if (recType == REC_FACE)
     {
+         // If detected Face in scanned image
         docfrontImage = _imageView.image;
         [self imageRotation:@"FontImg"];
         if (!bRecDone)
@@ -656,6 +664,7 @@ NSString *previouslines = @"";
     }
     else if (recType == REC_MRZ)
     {
+        // If detected MRZ in scanned image
         documentImage = _imageView.image;
         [self imageRotation: @"BackImg"];
         if (bFaceReplace || bMrzFirst)
@@ -667,6 +676,7 @@ NSString *previouslines = @"";
         
         if (!bRecDone)
         {
+             // Ask to scan front side of document if face not detected
             [self._lblTitle setText:@"Scan Front Side of Document"];
             [self flipAnimation];
             return;
@@ -739,8 +749,7 @@ NSString *previouslines = @"";
     [super viewDidDisappear:animated];
     if (_isCapturing)
     {
-        //scanning stop
-        [_videoCamera stop];
+        [_videoCamera stop]; //Stop Scanning
         _isCapturing = NO;
     }
 }

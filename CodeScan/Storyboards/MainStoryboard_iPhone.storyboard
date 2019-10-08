@@ -675,10 +675,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flip" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-MN-Sqe">
-                                <rect key="frame" x="132" y="315" width="150" height="150"/>
+                                <rect key="frame" x="169.66666666666666" y="352.66666666666669" width="75" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="8An-1s-R5T"/>
-                                    <constraint firstAttribute="width" constant="150" id="jME-EL-B7c"/>
+                                    <constraint firstAttribute="height" constant="75" id="8An-1s-R5T"/>
+                                    <constraint firstAttribute="width" constant="75" id="jME-EL-B7c"/>
                                 </constraints>
                             </imageView>
                         </subviews>

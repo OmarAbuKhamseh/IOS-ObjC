@@ -43,7 +43,7 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"f671dd0a8c37e69ab60730dfd332654e" forHTTPHeaderField:@"Api-Key"];
+    [manager.requestSerializer setValue:@"add your key here" forHTTPHeaderField:@"Api-Key"];
     UIImage *imageFirst = [parameter valueForKey:@"image1"];
     UIImage *imageSecond = [parameter valueForKey:@"image2"];
     NSData *imageData1 = UIImageJPEGRepresentation(imageFirst, 0.3);

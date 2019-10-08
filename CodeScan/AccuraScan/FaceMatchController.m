@@ -38,8 +38,8 @@ UIImagePickerController* picker;
     [[self lblScore] setText:@"Match Score : 0 %"];
     
     /*
-     SDK method call to engineWrapper init
-     @Return: init status bool value
+     FaceMatch SDK method to check if engine is initiated or not
+     Return: true or false
      */
     bool bInit = [EngineWrapper IsEngineInit];
     if (!bInit)
@@ -53,10 +53,10 @@ UIImagePickerController* picker;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     /*
-     SDK method call to get engineWrapper load status
-     @Return: init status Int value
+     Facematch SDK method to get SDK engine status after initialization
+     Return: -20 = Face Match license key not found, -15 = Face Match license is invalid.
      */
-    int nRet = [EngineWrapper GetEngineInitValue];
+    int nRet = [EngineWrapper GetEngineInitValue]; //get engineWrapper load status
     if (nRet == -20)
         [self showAlertView:@"key not found" withViewController:self];
     else if (nRet == -15)
@@ -94,10 +94,9 @@ UIImagePickerController* picker;
 }
 
 /**
- * This method use get captured view
- * Parameters to Pass: UIView
- *
- * This method will return array of UIImageview
+ * This method is used to get captured view
+ * Param: UIView
+ * Return: array of UIImageview
  */
 - (NSMutableArray*)allImageViewsSubViews:(UIView *)view
 {
@@ -190,18 +189,18 @@ UIImagePickerController* picker;
     NSFaceRegion* faceRegion;
     if (selIndex == 1)
     /*
-     FaceMatch SDK method call to Identify face in Document scanning image
-     @Params: BackImage, Front Face Image
-     @Return: Face data
+     Accura Face SDK method to detect user face from document image
+     Param: Document image
+     Return: User Face
      */
     faceRegion = [EngineWrapper DetectSourceFaces:image];
     else {
         NSFaceRegion* face1 = [[self srcFView] getFaceRegion]; //Find UIImage in face
         if (face1 == nil) {
             /*
-             FaceMatch SDK method call to Identify face in Document scanning image
-             @Params: BackImage, Front Face Image
-             @Return: Face data
+             Accura Face SDK method to detect user face from document image
+             Param: Document image
+             Return: User Face
              */
             faceRegion = [EngineWrapper DetectSourceFaces:image];
         } else {
@@ -209,6 +208,7 @@ UIImagePickerController* picker;
              FaceMatch SDK method call to detect Face in back image
              @Params: BackImage, Front Face Image faceRegion
              @Return: Face Image Frame
+             
              */
             faceRegion = [EngineWrapper DetectTargetFaces:image feature1:face1.feature];
         }
@@ -237,9 +237,9 @@ UIImagePickerController* picker;
             NSFaceRegion* faceRegion2;
             if (face1 == nil) {
                 /*
-                 FaceMatch SDK method call to Identify face in Document scanning image
-                 @Params: BackImage, Front Face Image
-                 @Return: Face data
+                 Accura Face SDK method to detect user face from document image
+                 Param: Document image
+                 Return: User Face
                  */
                 faceRegion2 = [EngineWrapper DetectSourceFaces:face2.image];
             } else {
@@ -247,6 +247,7 @@ UIImagePickerController* picker;
                  FaceMatch SDK method call to detect Face in back image
                  @Params: BackImage, Front Face Image faceRegion
                  @Return: Face Image Frame
+                 
                  */
                 faceRegion2 = [EngineWrapper DetectTargetFaces:face2.image feature1:face1.feature];
             }
@@ -293,12 +294,12 @@ UIImagePickerController* picker;
     }
     
     /*
-     SDK method call to get FaceMatch Score
+     FaceMatch SDK method call to get FaceMatch Score
      @Params: FrontImage Face, BackImage Face
      @Return: Match Score
      */
     double score = [EngineWrapper Identify:face1.feature featurebuff2:face2.feature];
-    double finalScore = score * 100;
+    double finalScore = score * 100; //Face Match score convert to float valu
     NSString* strScore = [NSString stringWithFormat:@"Match Score : %0.2f %%", finalScore];
     [[self lblScore] setText:strScore];
     

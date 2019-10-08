@@ -26,7 +26,6 @@
 		5C67D9982111E44E00154EB7 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9912111E44E00154EB7 /* SBJsonBase.m */; };
 		5C67D9992111E44E00154EB7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9932111E44E00154EB7 /* SBJsonParser.m */; };
 		5C67D99A2111E44E00154EB7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D9952111E44E00154EB7 /* SBJsonWriter.m */; };
-		5C67D99C2111E45600154EB7 /* key.license in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99B2111E45600154EB7 /* key.license */; };
 		5C67D99F2111E46400154EB7 /* mMQDF_f_Passport_bottom.dic in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99D2111E46300154EB7 /* mMQDF_f_Passport_bottom.dic */; };
 		5C67D9A02111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D99E2111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic */; };
 		5C67D9A72111E48C00154EB7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C67D9A42111E48B00154EB7 /* SVProgressHUD.bundle */; };
@@ -95,16 +94,15 @@
 		8113DC9222EDA6DD00A466E3 /* FaceImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8C22EDA6DC00A466E3 /* FaceImageView.m */; };
 		8113DC9322EDA6DD00A466E3 /* DetectResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8D22EDA6DC00A466E3 /* DetectResult.m */; };
 		8113DC9422EDA6DD00A466E3 /* EngineWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8113DC8E22EDA6DC00A466E3 /* EngineWrapper.mm */; };
-		A30854CB23083FA8007B23E8 /* accuraface.license in Resources */ = {isa = PBXBuildFile; fileRef = A30854CA23083FA8007B23E8 /* accuraface.license */; };
 		A34DB3A9233A2A4F00A7191C /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34DB3A8233A2A4F00A7191C /* opencv2.framework */; };
+		A374EA14234C49BB0054A170 /* AccuraFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A374EA11234C49BB0054A170 /* AccuraFace.a */; };
+		A374EA15234C49BB0054A170 /* AccuraOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A374EA12234C49BB0054A170 /* AccuraOCR.a */; };
+		A374EA17234C4B140054A170 /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A374EA13234C49BB0054A170 /* ZoomAuthenticationHybrid.framework */; };
+		A374EA19234C4C150054A170 /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A374EA13234C49BB0054A170 /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A387F544233E16480076D86F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F53A233E16480076D86F /* Constants.swift */; };
 		A387F548233E16480076D86F /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F540233E16480076D86F /* Rechability.swift */; };
 		A387F549233E16480076D86F /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F542233E16480076D86F /* AFWrapper.swift */; };
 		A387F54A233E16480076D86F /* CommonErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387F543233E16480076D86F /* CommonErrorAlert.swift */; };
-		A39C03E6233A2E6D006D640B /* AccuraFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E4233A2E6D006D640B /* AccuraFace.a */; };
-		A39C03E7233A2E6D006D640B /* AccuraOCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E5233A2E6D006D640B /* AccuraOCR.a */; };
-		A39C03EA233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */; };
-		A39C03EB233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE1CCF92231FBDA2003F0B50 /* CustomAFNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1CCF90231FBDA0003F0B50 /* CustomAFNetWorking.m */; };
 		AE498FA8231A575800D04C00 /* DocumentTableCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = AE498FA6231A575800D04C00 /* DocumentTableCell1.m */; };
 		AE498FA9231A575800D04C00 /* DocumentTableCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE498FA7231A575800D04C00 /* DocumentTableCell1.xib */; };
@@ -126,7 +124,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A39C03EB233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
+				A374EA19234C4C150054A170 /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +166,6 @@
 		5C67D9932111E44E00154EB7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		5C67D9942111E44E00154EB7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		5C67D9952111E44E00154EB7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		5C67D99B2111E45600154EB7 /* key.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = key.license; sourceTree = "<group>"; };
 		5C67D99D2111E46300154EB7 /* mMQDF_f_Passport_bottom.dic */ = {isa = PBXFileReference; lastKnownFileType = file; path = mMQDF_f_Passport_bottom.dic; sourceTree = "<group>"; };
 		5C67D99E2111E46400154EB7 /* mMQDF_f_Passport_bottom_Gray.dic */ = {isa = PBXFileReference; lastKnownFileType = file; path = mMQDF_f_Passport_bottom_Gray.dic; sourceTree = "<group>"; };
 		5C67D9A42111E48B00154EB7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -259,15 +256,14 @@
 		8113DC8D22EDA6DC00A466E3 /* DetectResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectResult.m; sourceTree = "<group>"; };
 		8113DC8E22EDA6DC00A466E3 /* EngineWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EngineWrapper.mm; sourceTree = "<group>"; };
 		9CECF16C6E84083F97DABCB3 /* Pods_Accura_Scan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Accura_Scan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A30854CA23083FA8007B23E8 /* accuraface.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = accuraface.license; sourceTree = "<group>"; };
 		A34DB3A8233A2A4F00A7191C /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		A374EA11234C49BB0054A170 /* AccuraFace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraFace.a; sourceTree = "<group>"; };
+		A374EA12234C49BB0054A170 /* AccuraOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraOCR.a; sourceTree = "<group>"; };
+		A374EA13234C49BB0054A170 /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		A387F53A233E16480076D86F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A387F540233E16480076D86F /* Rechability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		A387F542233E16480076D86F /* AFWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
 		A387F543233E16480076D86F /* CommonErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonErrorAlert.swift; sourceTree = "<group>"; };
-		A39C03E4233A2E6D006D640B /* AccuraFace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraFace.a; sourceTree = "<group>"; };
-		A39C03E5233A2E6D006D640B /* AccuraOCR.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AccuraOCR.a; sourceTree = "<group>"; };
-		A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		A3BD2BF48CC8B09BF1D1065E /* Pods-Accura Scan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Accura Scan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Accura Scan/Pods-Accura Scan.release.xcconfig"; sourceTree = "<group>"; };
 		A3BD2D5F2339E4D900C10E07 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A681A200B0E9D89F47FBE4CA /* Pods-AccuraSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccuraSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AccuraSDK/Pods-AccuraSDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -299,26 +295,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A374EA17234C4B140054A170 /* ZoomAuthenticationHybrid.framework in Frameworks */,
 				18FCC8EA230BD23A00A5FB90 /* MobileCoreServices.framework in Frameworks */,
-				A39C03EA233A2F06006D640B /* ZoomAuthenticationHybrid.framework in Frameworks */,
 				5CA3B78E2144071200A5867A /* AVFoundation.framework in Frameworks */,
 				5C9AF51021199A1E00700EDF /* Foundation.framework in Frameworks */,
 				5C9AF50E21199A1300700EDF /* UIKit.framework in Frameworks */,
 				5C9AF50C21199A0A00700EDF /* Accelerate.framework in Frameworks */,
 				5C9AF50A211999FE00700EDF /* CoreVideo.framework in Frameworks */,
+				A374EA15234C49BB0054A170 /* AccuraOCR.a in Frameworks */,
 				5C9AF508211999F200700EDF /* CoreMedia.framework in Frameworks */,
 				5C9AF506211999E500700EDF /* CoreImage.framework in Frameworks */,
 				5C9AF504211999C600700EDF /* QuartzCore.framework in Frameworks */,
 				A34DB3A9233A2A4F00A7191C /* opencv2.framework in Frameworks */,
 				5C9AF502211999BD00700EDF /* AudioToolbox.framework in Frameworks */,
-				A39C03E6233A2E6D006D640B /* AccuraFace.a in Frameworks */,
 				5C9AF500211999B300700EDF /* libsqlite3.tbd in Frameworks */,
 				5C9AF4FE211999A400700EDF /* AccuraScan.sqlite in Frameworks */,
+				A374EA14234C49BB0054A170 /* AccuraFace.a in Frameworks */,
 				5C9AF4FC2119998E00700EDF /* MessageUI.framework in Frameworks */,
 				5C9AF4FA2119998300700EDF /* CoreData.framework in Frameworks */,
 				5C9AF4F82119997700700EDF /* SystemConfiguration.framework in Frameworks */,
 				5C9AF4F62119996D00700EDF /* libz.1.dylib in Frameworks */,
-				A39C03E7233A2E6D006D640B /* AccuraOCR.a in Frameworks */,
 				5C9AF4F42119995800700EDF /* libsqlite3.dylib in Frameworks */,
 				5B7402023C93EFBD3A735D1A /* Pods_Accura_Scan.framework in Frameworks */,
 			);
@@ -366,8 +362,8 @@
 				030FD40621E4CF370084B5A8 /* CustomAfnetwork */,
 				AE1CCF93231FC050003F0B50 /* Api Calling */,
 				AE1CCF94231FC0A6003F0B50 /* External */,
-				A39C03E3233A2E6D006D640B /* Framework */,
 				AE1CCF96231FC28A003F0B50 /* License */,
+				A374EA10234C49BB0054A170 /* Framework */,
 				8113DC8222EDA39300A466E3 /* FaceMatch */,
 				5C94E01C211ACA8200428686 /* Font */,
 				5C67D9A32111E48B00154EB7 /* ProgressHud */,
@@ -504,7 +500,6 @@
 				AEC4B9BE23262EC40046426C /* .gitignore */,
 				030A72B921EA09270058B664 /* me.png */,
 				03F05943224A053700A63B3C /* cam.png */,
-				A39C03E8233A2ED7006D640B /* ZoomAuthenticationHybrid.framework */,
 				6104CC7820BB4E6D00AC428E /* CodeScan */,
 				6104CC7720BB4E6D00AC428E /* Products */,
 				3EA25990B673F8362DC1D155 /* Pods */,
@@ -698,6 +693,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A374EA10234C49BB0054A170 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A374EA13234C49BB0054A170 /* ZoomAuthenticationHybrid.framework */,
+				A374EA11234C49BB0054A170 /* AccuraFace.a */,
+				A374EA12234C49BB0054A170 /* AccuraOCR.a */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		A387F53B233E16480076D86F /* Comman */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,16 +719,6 @@
 				A387F543233E16480076D86F /* CommonErrorAlert.swift */,
 			);
 			path = WSCall;
-			sourceTree = "<group>";
-		};
-		A39C03E3233A2E6D006D640B /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				A39C03E4233A2E6D006D640B /* AccuraFace.a */,
-				A39C03E5233A2E6D006D640B /* AccuraOCR.a */,
-			);
-			name = Framework;
-			path = License/Framework;
 			sourceTree = "<group>";
 		};
 		AE1CCF93231FC050003F0B50 /* Api Calling */ = {
@@ -750,8 +745,6 @@
 		AE1CCF96231FC28A003F0B50 /* License */ = {
 			isa = PBXGroup;
 			children = (
-				5C67D99B2111E45600154EB7 /* key.license */,
-				A30854CA23083FA8007B23E8 /* accuraface.license */,
 			);
 			path = License;
 			sourceTree = "<group>";
@@ -843,7 +836,6 @@
 				5C94E02A211ACA8200428686 /* AllerDisplay_Std_Rg.ttf in Resources */,
 				617EB0CE20BB60A800BCBFD9 /* SelectCodeVC.storyboard in Resources */,
 				5C94E028211ACA8200428686 /* Aller_Std_LtIt.ttf in Resources */,
-				5C67D99C2111E45600154EB7 /* key.license in Resources */,
 				6104CC7F20BB4E6D00AC428E /* CodeScanVC.storyboard in Resources */,
 				617EB0D920BB69DD00BCBFD9 /* BarcodeTypeTVC.xib in Resources */,
 				5C67D9A72111E48C00154EB7 /* SVProgressHUD.bundle in Resources */,
@@ -851,7 +843,6 @@
 				5C67D99F2111E46400154EB7 /* mMQDF_f_Passport_bottom.dic in Resources */,
 				5C94E025211ACA8200428686 /* Aller_Std_BdIt.ttf in Resources */,
 				5C94E029211ACA8200428686 /* Aller_Std_Rg.ttf in Resources */,
-				A30854CB23083FA8007B23E8 /* accuraface.license in Resources */,
 				617EB0E720BB78F500BCBFD9 /* ScanRegionV.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
