@@ -5,3 +5,9 @@ iOS Objective-C Project to Integrate AccuraScan OCR and AccuraScan Face Match wi
 Use below command in Terminal to clone repository
 
 git clone https://github.com/accurascan/IOS-ObjC.git
+
+After completing above command install pod with below command
+
+pod install
+
+Once installation finish open Accura Scan.xcworkspace in xcode
