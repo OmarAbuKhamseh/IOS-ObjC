@@ -2,8 +2,10 @@
 iOS Objective-C Project to Integrate AccuraScan OCR and AccuraScan Face Match with 3D Selfie Technology for Liveness Check
 
 # Download
-install git-lfs
+
 Use below command in Terminal to clone repository
+
+install git-lfs
 
 Git clone https://github.com/accurascan/IOS-ObjC.git
 
