@@ -11,4 +11,4 @@ iOS Objective-C Project to Integrate AccuraScan OCR and AccuraScan Face Match wi
 
 4. Execute command - pod install
 
-5. Once installation is done open AccuraSDK.xcworkspace in xcode
+5. Once installation is done open Accura Scan.xcworkspace in xcode
